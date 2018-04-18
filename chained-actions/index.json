@@ -13,7 +13,12 @@
             "code": "set-env.sh"
         },
         "steps": [
-        ]
+        ],
+        "assets": {
+            "host01": [
+                {"file": "*", "target": "/root/"}
+            ]
+        }
     },
     "files": [],
     "environment": {
