@@ -1,6 +1,6 @@
-# A Simple Node.js Function using OpenWhisk on OpenShift
+# A Simple Greeter Javascript Function on OpenShift Cloud Functions
 
-In this scenario we will deploy a simple function on the OpenWhisk FaaS platform running on top of OpenShift.
+In this scenario, you will deploy a simple javascript function on the OpenShift Cloud Functions FaaS platform.
 
 ## Additional Resources
 
