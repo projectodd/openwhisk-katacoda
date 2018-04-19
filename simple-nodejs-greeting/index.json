@@ -9,7 +9,7 @@
         "intro": {
             "text": "00-intro.md",
             "credits": "http://developers.redhat.com",
-            "code": "pre-scenario-setup.sh"
+            "code": "set-env.sh"
         },
         "steps": [
             {
