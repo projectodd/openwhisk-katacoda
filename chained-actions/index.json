@@ -22,13 +22,13 @@
             "client": [
                 {
                     "file": "owsk-install.sh",
-                    "target": "/root/"
+                    "target": "~/"
                 }
             ],
             "host01": [
                 {
                     "file": "*",
-                    "target": "/root/"
+                    "target": "~/"
                 }
             ]
         }
