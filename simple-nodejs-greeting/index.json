@@ -9,7 +9,7 @@
         "intro": {
             "text": "00-intro.md",
             "credits": "http://developers.redhat.com",
-            "code": "set-env.sh"
+            "code": "pre-scenario-setup.sh"
         },
         "steps": [
             {
@@ -20,15 +20,6 @@
         "finish": {
             "text": "99-outro.md"
         }
-    },
-    "assets": {
-      "host01": [
-        {
-          "file": "pre-scenario-setup.sh",
-          "target": "/root/",
-          "chmod": "+x"
-        }
-      ]
     },
     "files": [],
     "environment": {
