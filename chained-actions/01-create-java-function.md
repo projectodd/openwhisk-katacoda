@@ -1,17 +1,30 @@
 # Create Java Function
 
-Having successfully deployed [Apache OpenWhisk](https://openwhisk.apache.org/) to [OpenShift](https://openshift.com) and [OpenWhisk CLI](https://github.com/apache/incubator-openwhisk-cli/releases/) is now configured to work with the OpenWhisk, we will now write a simple Java function.
+For the first step in our sequence, we'll use a Java function to take in a comma delimited list of words and split it around those commas.
 
 
-**1. Create a Java function**
+**1. Create a package to hold the functions**
 
-The Java function can be created using the [Java Action Maven Archetype](https://github.com/apache/incubator-openwhisk-devtools/tree/master/java-action-archetype).  
+Apache OpenWhisk supports the notion of packages to bundle together related Actions making it easier to manage and share related 
+functions.  To start, we'll create a new a package for our Actions:
+
+``wsk -i package create sequence``{execute}
+
+**2. Create a Java function**
+
+Next, it's time to create the Java Action to do the first step in our sequence.  This function can be created using the [Java Action 
+Maven Archetype](https://github.com/apache/incubator-openwhisk-devtools/tree/master/java-action-archetype).  
 
 ``cd /root/projects``{{execute}}
 
 Create a Java function project called `hello-openwhisk`
 
-``mvn archetype:generate -DarchetypeGroupId=org.apache.openwhisk.java -DarchetypeArtifactId=java-action-archetype -DarchetypeVersion=1.0-SNAPSHOT -DgroupId=com.example -DartifactId=hello-openwhisk``{{execute}}
+```mvn archetype:generate \
+    -DarchetypeGroupId=org.apache.openwhisk.java \
+    -DarchetypeArtifactId=java-action-archetype \
+    -DarchetypeVersion=1.0-SNAPSHOT \
+    -DgroupId=com.example \
+    -DartifactId=splitter```{{execute}}
 
 Move to the project directory
 
