@@ -2,7 +2,7 @@
     "pathwayTitle": "Apache OpenWhisk on OpenShift",
     "icon": "fa-openshift",
     "title": "Chained Actions",
-    "description": "Chaining actions on OpenWhisk",
+    "description": "Chaining Actions on OpenWhisk",
     "difficulty": "intermediate",
     "time": "15 minutes",
     "details": {
@@ -24,10 +24,6 @@
     "environment": {
         "showdashboard": true,
         "dashboards": [
-            {
-                "name": "Local Web Browser",
-                "port": 8080
-            },
             {
                 "name": "OpenShift Console",
                 "port": 8443
