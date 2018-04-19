@@ -21,13 +21,7 @@
         "assets": {
             "client": [
                 {
-                    "file": "owsk-install.sh",
-                    "target": "~/"
-                }
-            ],
-            "host01": [
-                {
-                    "file": "owsk-install.sh",
+                    "file": "configure-owsk.sh",
                     "target": "~/"
                 }
             ]
