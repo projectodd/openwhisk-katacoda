@@ -1,0 +1,42 @@
+{
+    "pathwayTitle": "Rules and Triggers via OpenWhisk on OpenShift",
+    "icon": "fa-openshift",
+    "title": "Rules and Triggers via OpenWhisk on OpenShift",
+    "description": "Demostrating the use of Rules and Triggers via OpenWhisk on OpenShift",
+    "difficulty": "beginner",
+    "time": "5 minutes",
+    "details": {
+        "intro": {
+            "text": "00-intro.md",
+            "credits": "http://developers.redhat.com",
+            "code": "pre-scenario-setup.sh"
+        },
+        "steps": [
+            {
+                "title": "Step 1 - Create Timestamp Function",
+                "text": "01-create-function.md"
+            }
+        ],
+        "finish": {
+            "text": "99-outro.md"
+        }
+    },
+    "files": [],
+    "environment": {
+        "showdashboard": true,
+        "dashboards": [
+            {
+                "name": "OpenShift Console",
+                "port": 8443
+            }
+        ],
+        "uilayout": "editor-terminal",
+        "uieditorpath": "/root/projects/getting-started",
+        "uisettings": "java",
+        "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n"
+    },
+    "backend": {
+        "imageid": "openshift-middleware-3-7",
+        "port": 8443
+    }
+}
