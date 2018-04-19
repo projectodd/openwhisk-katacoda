@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rm -r -p /root/projects
+rm -rf /root/projects
 mkdir -p /root/projects/chaining
 
 pwd
