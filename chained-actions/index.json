@@ -13,6 +13,10 @@
             "code": "set-env.sh"
         },
         "steps": [
+            {
+                "title": "Step 1",
+                "text": "01-create-java-function.md"
+            }
         ],
         "assets": {
             "client": [
