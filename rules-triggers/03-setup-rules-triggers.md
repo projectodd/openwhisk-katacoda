@@ -31,11 +31,16 @@ wsk -i rule create \
 ``{{execute}}
 
 At this point, you can click on the second terminal tab to check the activation polling to confirm that the timestamp
-action is invoked by the trigger.  You should see something like this:
+action is invoked by the trigger every 10 seconds.  You should see something like this:
 
 ```sh
-Activation: 'timestamp' (a9a18cde63964cf7a18cde6396fcf719)
+Activation: 'every-10-seconds' (3e255c2d54534764a55c2d5453676405)
 [
-    "2018-04-19T17:38:46.626950489Z stdout: Invoked at: 4/19/2018, 5:38:46 PM"
+    "{\"statusCode\":0,\"success\":true,\"activationId\":\"78cc6219bf3544bb8c6219bf3514bbf6\",\"rule\":\"whisk.system/invoke-periodically\",\"action\":\"whisk.system/timestamp\"}"
+]
+
+Activation: 'timestamp' (78cc6219bf3544bb8c6219bf3514bbf6)
+[
+    "2018-04-19T23:23:01.87488594Z  stdout: Invoked at: 4/19/2018, 11:23:01 PM"
 ]
 ```
