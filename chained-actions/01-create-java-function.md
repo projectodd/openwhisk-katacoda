@@ -8,7 +8,7 @@ For the first step in our sequence, we'll use a Java function to take in a comma
 Apache OpenWhisk supports the notion of packages to bundle together related Actions making it easier to manage and share related 
 functions.  To start, we'll create a new a package for our Actions:
 
-``wsk -i package create sequence``{execute}
+``wsk -i package create sequence``{{execute}}
 
 **2. Create a Java function**
 
@@ -17,97 +17,131 @@ Maven Archetype](https://github.com/apache/incubator-openwhisk-devtools/tree/mas
 
 ``cd /root/projects``{{execute}}
 
-Create a Java function project called `hello-openwhisk`
+Create a Java function project called `splitter`
 
-```mvn archetype:generate \
+```bash
+mvn archetype:generate \
     -DarchetypeGroupId=org.apache.openwhisk.java \
     -DarchetypeArtifactId=java-action-archetype \
     -DarchetypeVersion=1.0-SNAPSHOT \
     -DgroupId=com.example \
-    -DartifactId=splitter```{{execute}}
+    -DartifactId=splitter
+```{{execute}}
 
 Move to the project directory
 
-``cd /root/projects/hello-openwhisk``{{execute}}
+``cd splitter``{{execute}}
 
 Click the link below to open pom.xml and update the `finalName` with value `${artifactId}` that helps us avoid long jar names during function deployment on OpenWhisk:
 
-``/root/projects/hello-openwhisk/pom.xml``{{open}}
+``splitter/pom.xml``{{open}}
 
 Let's open the Java source file `src/main/java/com/example/FunctionApp.java` to review its contents.  Click the link below to open the source file in the editor:
 
-``/root/projects/hello-openwhisk/src/main/java/com/example/FunctionApp.java``{{open}}
+``splitter/src/main/java/com/example/FunctionApp.java``{{open}}
 
 All OpenWhisk Java function classes should have a `main` method with a signature that takes a `com.google.gson.JsonObject` as parameter and returns a `com.google.gson.JsonObject`.
+We need to update the generated function with our desired behavior.  Update the FunctionApp class with this code:
+
+<pre class="file" data-filename="splitter/src/main/java/com/example/FunctionApp.java" data-target="replace">
+package com.example;
+
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+
+/**
+ * Splitter FunctionApp
+ */
+public class FunctionApp {
+  public static JsonObject main(JsonObject args) {
+    JsonObject response = new JsonObject();
+    String text = null;
+    if (args.has("text")) {
+      text = args.getAsJsonPrimitive("text").getAsString();
+    }
+    String[] results = new String[] { text };
+    if (text != null && text.indexOf(",") != -1) {
+      results = text.split(",");
+    }
+    JsonArray splitStrings = new JsonArray();
+    for (String var : results) {
+      splitStrings.add(var);
+    }
+    response.add("result", splitStrings);
+    return response;
+  }
+}
+</pre>
+
+With the main function updated, now we need to update the tests.
+
+Update the FunctionAppTest class with this code:
+
+<pre class="file" data-filename="splitter/src/test/java/com/example/FunctionAppTest.java" data-target="replace">
+package com.example;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
+import java.util.ArrayList;
+
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+
+import org.junit.Test;
+
+/**
+ * Splitter FunctionAppTest
+ */
+public class FunctionAppTest {
+  @Test
+  public void testFunction() {
+    JsonObject args = new JsonObject();
+    args.addProperty("text", "apple,orange,banana");
+    JsonObject response = FunctionApp.main(args);
+    assertNotNull(response);
+    JsonArray results = response.getAsJsonArray("result");
+    assertNotNull(results);
+    assertEquals(3, results.size());
+    ArrayList<String> actuals = new ArrayList<>();
+    results.forEach(j -> actuals.add(j.getAsString()));
+    assertTrue(actuals.contains("apple"));
+    assertTrue(actuals.contains("orange"));
+    assertTrue(actuals.contains("banana"));
+  }
+}
+</pre>
 
 Build the project
 
 ``mvn clean package``{{execute}}
 
-`NOTE`: The Java action maven archetype is not in maven central yet.  If you plan to use it in your local OpenWhisk environment you then 
-need to build and install from [sources](https://github.com/apache/incubator-openwhisk-devtools/tree/master/java-action-archetype).
+`NOTE`: The Java Action maven archetype is not in maven central yet.  If you plan to use it in your local OpenWhisk environment you then need to build and install from [sources](https://github.com/apache/incubator-openwhisk-devtools/tree/master/java-action-archetype).
 
-**2. Deploy the function**
+**3. Deploy the function**
 
-Let's now create a function called `hello-openwhisk` in OpenWhisk:
+Let's now create a function called `splitter` in OpenWhisk:
 
-``wsk -i action create hello-openwhisk target/hello-openwhisk.jar --main com.example.FunctionApp``{{execute}}
+``wsk -i action create splitter target/splitter.jar --main com.example.FunctionApp``{{execute}}
 
 When we create Java function the parameter `--main` is mandatory.  It defines which Java class will be called during OpenWhisk Action invocation.
 
 Let's check if the function is created correctly:
 
-``wsk -i action list | grep 'hello-openwhisk'``{{execute}}
+``wsk -i action list | grep 'splitter'``{{execute}}
 
 The output of the command should show something like:
 
 ```sh
-/whisk.system/hello-openwhisk                             private java
+/whisk.system/splitter                             private java
 ```
 
-**3. Verify the function**
+**4. Verify the function**
 
-Having created the function `hello-openwhisk`, let's now verify the function.
+Having created the function `splitter`, let's now verify the function.
 
-**Unblocked invocation**
-
-All OpenWhisk action invocations are `unblocked` by default.  Each action invocation will return an activation ID which can be used to check the result later.
-
-![Web Console Login](../assets/ow_action_with_activation_id.png)
-
-The activation ID can be used to  check the response using `wsk` CLI:
-
-```sh
-wsk -i activation result <activation_id>
-```
-
-e.g. 
-
-```sh
-wsk -i activation result ffb2966350904356b29663509043566e
-```
-
-Let's now invoke our Java function in unblocked manner:
-
-``ACTIVATION_ID=$(wsk -i action invoke hello-openwhisk | awk '{print $6}')``{{execute}}
-
-Let's check the result of the invocation:
-
-``wsk -i activation result $ACTIVATION_ID``{{execute}}
-
-You should see this result:
-
-```json
-{
-    "greetings": "Hello! Welcome to OpenWhisk"
-}
-```
-
-**Blocked invocation**
-
-We can also make the OpenWhisk action invocation to be synchronous by adding a `--result` parameter to `wsk` CLI command: 
-
-``wsk -i action invoke hello-openwhisk --result``{{execute}}
+``wsk -i action invoke splitter --result``{{execute}}
 
 Executing the above command should return us this JSON payload:
 
