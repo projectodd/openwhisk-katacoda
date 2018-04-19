@@ -19,7 +19,7 @@
             }
         ],
         "assets": {
-            "client": [
+            "host01": [
                 {
                     "file": "configure-owsk.sh",
                     "target": "~/"
