@@ -22,10 +22,11 @@
         }
     },
     "assets": {
-      "client": [
+      "host01": [
         {
           "file": "pre-scenario-setup.sh",
-          "target": "~/"
+          "target": "/root/",
+          "chmod": "+x"
         }
       ]
     },
