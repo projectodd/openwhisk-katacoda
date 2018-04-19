@@ -15,6 +15,12 @@
         "steps": [
         ],
         "assets": {
+            "client": [
+                {
+                    "file": "*",
+                    "target": "/root/"
+                }
+            ],
             "host01": [
                 {
                     "file": "*",
