@@ -15,16 +15,10 @@ Let's now use the OpenWhisk command to start activation polling in this second t
 
 ``wsk -i activation poll``{{execute}}
 
-The polling should start in the second terminal and show some "invokerHealthTestAction0" messages like:
+The polling should start in the second terminal.  It may or may not show "invokerHealthTestAction0" messages like:
 
 ```sh
 Activation: 'invokerHealthTestAction0' (f5bca1d1ef334533bca1d1ef333533de)
-[]
-
-Activation: 'invokerHealthTestAction0' (956669d570eb4490a669d570ebe490bd)
-[]
-
-Activation: 'invokerHealthTestAction0' (4b88bebf2a97485a88bebf2a97e85a08)
 []
 ```
 
