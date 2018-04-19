@@ -23,7 +23,7 @@
     "environment": {
         "showdashboard": true,
         "uilayout": "editor-terminal",
-        "uieditorpath": "/root/projects/getting-started",
+        "uieditorpath": "/root/projects/ocf",
         "uisettings": "java",
         "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\u001b[m\r\n"
     },
