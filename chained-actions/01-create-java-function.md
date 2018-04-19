@@ -19,8 +19,7 @@ Maven Archetype](https://github.com/apache/incubator-openwhisk-devtools/tree/mas
 
 Create a Java function project called `splitter`
 
-```bash
-mvn archetype:generate \
+```mvn archetype:generate \
     -DarchetypeGroupId=org.apache.openwhisk.java \
     -DarchetypeArtifactId=java-action-archetype \
     -DarchetypeVersion=1.0-SNAPSHOT \
@@ -31,10 +30,6 @@ mvn archetype:generate \
 Move to the project directory
 
 ``cd splitter``{{execute}}
-
-Click the link below to open pom.xml and update the `finalName` with value `${artifactId}` that helps us avoid long jar names during function deployment on OpenWhisk:
-
-``splitter/pom.xml``{{open}}
 
 Let's open the Java source file `src/main/java/com/example/FunctionApp.java` to review its contents.  Click the link below to open the source file in the editor:
 
@@ -123,9 +118,11 @@ Build the project
 
 Let's now create a function called `splitter` in OpenWhisk:
 
-``wsk -i action create splitter target/splitter.jar --main com.example.FunctionApp``{{execute}}
+``wsk -i action create sequence/splitter target/splitter.jar --main com.example.FunctionApp``{{execute}}
 
 When we create Java function the parameter `--main` is mandatory.  It defines which Java class will be called during OpenWhisk Action invocation.
+
+**4. Verify the function**
 
 Let's check if the function is created correctly:
 
@@ -134,23 +131,25 @@ Let's check if the function is created correctly:
 The output of the command should show something like:
 
 ```sh
-/whisk.system/splitter                             private java
+/whisk.system/sequence/splitter                             private java
 ```
 
-**4. Verify the function**
+Now we can invoke the action and see that it's working:
 
-Having created the function `splitter`, let's now verify the function.
-
-``wsk -i action invoke splitter --result``{{execute}}
+``wsk -i action invoke sequence/splitter --result --param text "zebra,cat,antelope"``{{execute}}
 
 Executing the above command should return us this JSON payload:
 
 ```json
 {
-    "greetings": "Hello! Welcome to OpenWhisk"
+    "result": [
+        "zebra",
+        "cat",
+        "antelope"
+    ]
 }
 ```
 
-# Congratulations
+# Next
 
-Congratulations you have now successfully developed a Java function and deployed the same on to OpenWhisk.   In next step we will see how to update the function and redeploy it.
+We now have the first step in our sequence defined and running.  The next step is the sort stage.
