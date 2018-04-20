@@ -3,7 +3,7 @@
 In this step, you will go back to your first terminal window and setup a trigger and a rule to invoke the timestamp
 function periodically. If you have not clicked on the first terminal tab, do so now. 
 
-**1. Setup `every-5-seconds` Trigger**
+**1. Setup `every-5-seconds` Trigger.**
 
 This trigger uses the built-in alarm package feed to fire events every 5 seconds. This is specified through cron syntax
 in the `cron` parameter. The `maxTriggers` parameter ensures that it only fires for 200 seconds (40 times), rather than
@@ -16,7 +16,7 @@ wsk -i trigger create every-5-seconds \
     --param maxTriggers 40
 ``{{execute}}
 
-**2. Create `invoke-periodically` Rule **
+**2. Create `invoke-periodically` Rule.**
 
 This rule shows how the `every-5-seconds` trigger can be declaratively mapped to the `timestamp.js` action. 
 Notice that it's named somewhat abstractly so that if we wanted to use a different trigger 
