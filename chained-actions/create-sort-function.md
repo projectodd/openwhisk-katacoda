@@ -11,7 +11,7 @@ cd ~/projects/sorter
 ```{{execute}} 
  
  
-We need to create our python script for function.  Let's open ``sorter.py``{{open}} and update it as shown below:
+We need to create our python script for function.  Let's open ``sorter/sorter.py``{{open}} and update it as shown below:
  
 <pre class="file" data-filename="sorter/sorter.py" data-target="replace">
 def main(args):

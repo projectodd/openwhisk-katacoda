@@ -3,14 +3,7 @@
 For the first step in our sequence, we'll use a Java function to take in a comma delimited list of words and split it around those commas.
 
 
-**1. Create a package to hold the functions**
-
-Apache OpenWhisk supports the notion of packages to bundle together related Actions making it easier to manage and share related 
-functions.  To start, we'll create a new a package for our Actions:
-
-``wsk -i package create sequence``{{execute}}
-
-**2. Create the Java function**
+**1. Create the Java function**
 
 Next, it's time to create the Java Action to do the first step in our sequence.  This function can be created using the [Java Action 
 Maven Archetype](https://github.com/apache/incubator-openwhisk-devtools/tree/master/java-action-archetype).  
@@ -120,7 +113,7 @@ Build the project
 
 `NOTE`: The Java Action maven archetype is not in maven central yet.  If you plan to use it in your local OpenWhisk environment you then need to build and install from [sources](https://github.com/apache/incubator-openwhisk-devtools/tree/master/java-action-archetype).
 
-**3. Deploy the function**
+**2. Deploy the function**
 
 Let's now create a function called `splitter` in OpenWhisk:
 

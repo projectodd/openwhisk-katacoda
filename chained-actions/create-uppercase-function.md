@@ -11,11 +11,11 @@ mkdir -p ~/projects/uppercase
 cd ~/projects/uppercase
 ```{{execute}}
 
-Now let's open ``uppercase.js``{{open}} and create our uppercase function:
+Now let's open ``uppercase/uppercase.js``{{open}} and create our uppercase function:
 
 <pre class="file" data-filename="uppercase/uppercase.js" data-target="replace">
 function main(args) {
-    return {"result": args["result"].map(s => s.toUpperCase() }
+    return {"result": args["result"].map(s => s.toUpperCase()) }
  }
 </pre>
 
