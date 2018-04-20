@@ -1,14 +1,12 @@
 # Create Simple Greeter Function
 
-This scenario has a setup that has started and takes almost 8 minutes to complete.  Once it is complete, the terminal prompt to the right will be ready and you can proceed with the steps below.
-
 **1. Create a simple greeter JavaScript function**
 
-First, we need to create JavaScript file, click on the link below to create an empty file called **greeter.js** in the directory **/root/projects/getting-started** : ``greeter.js``{{open}}
+First, we need to create JavaScript file, click on the link below to create an empty file called **greeter.js** in the directory **/root/projects/ocf** : ``greeter.js``{{open}}
 
 Once the created file is opened in the editor, you can then copy the content below into the file (or use the `Copy to editor` button):
 
-<pre class="file" data-filename="/root/projects/getting-started/greeter.js" data-target="replace">
+<pre class="file" data-filename="/root/projects/ocf/greeter.js" data-target="replace">
 function main() {
     return {payload: 'Welcome to Apache OpenWhisk on OpenShift'};
 }
@@ -22,7 +20,7 @@ Take a minute and review the `greeter.js`. At this stage it is pretty simple and
 
 Lets now create the function say **greeter** to OpenWhisk:
 
-``cd /root/projects/getting-started/``{{execute}}
+``cd /root/projects/ocf/``{{execute}}
 
 ``wsk -i action create greeter greeter.js``{{execute}}
 
