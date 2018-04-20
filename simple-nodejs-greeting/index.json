@@ -1,8 +1,8 @@
 {
-    "pathwayTitle": "Simple FaaS Function via OpenWhisk on OpenShift",
+    "pathwayTitle": "Simple Javascript Greeting Function",
     "icon": "fa-openshift",
-    "title": "Simple Greeting FaaS Function via OpenWhisk on OpenShift",
-    "description": "Simple Greeting Function test of OpenWhisk on OpenShift",
+    "title": "Simple Javascript Greeting Function",
+    "description": "Deploying a Simple Javascript Function on Openshift Cloud Functions",
     "difficulty": "beginner",
     "time": "5 minutes",
     "details": {
