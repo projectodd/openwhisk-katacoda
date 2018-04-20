@@ -24,6 +24,14 @@
             {
                 "title": "Step 3",
                 "text": "create-sort-function.md"
+            },
+            {
+                "title": "Step 3",
+                "text": "create-uppercase-function.md"
+            },
+            {
+                "title": "Step 3",
+                "text": "create-sequence.md"
             }
         ],
         "assets": {

@@ -71,6 +71,8 @@ public class FunctionApp {
 
 With the main function updated, now we need to update the tests.
 
+``splitter/src/test/java/com/example/FunctionAppTest.java``{{open}}
+
 Update the FunctionAppTest class with this code:
 
 <pre class="file" data-filename="splitter/src/test/java/com/example/FunctionAppTest.java" data-target="replace">
@@ -95,11 +97,14 @@ public class FunctionAppTest {
   public void testFunction() {
     JsonObject args = new JsonObject();
     args.addProperty("text", "apple,orange,banana");
+    
     JsonObject response = FunctionApp.main(args);
     assertNotNull(response);
+    
     JsonArray results = response.getAsJsonArray("result");
     assertNotNull(results);
     assertEquals(3, results.size());
+    
     ArrayList<String> actuals = new ArrayList<>();
     results.forEach(j -> actuals.add(j.getAsString()));
     assertTrue(actuals.contains("apple"));
