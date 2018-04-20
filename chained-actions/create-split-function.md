@@ -1,4 +1,4 @@
-# Create Java Function
+# Create the Split Function
 
 For the first step in our sequence, we'll use a Java function to take in a comma delimited list of words and split it around those commas.
 
@@ -10,7 +10,7 @@ functions.  To start, we'll create a new a package for our Actions:
 
 ``wsk -i package create sequence``{{execute}}
 
-**2. Create a Java function**
+**2. Create the Java function**
 
 Next, it's time to create the Java Action to do the first step in our sequence.  This function can be created using the [Java Action 
 Maven Archetype](https://github.com/apache/incubator-openwhisk-devtools/tree/master/java-action-archetype).  
