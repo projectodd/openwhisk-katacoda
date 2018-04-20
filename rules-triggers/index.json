@@ -2,7 +2,7 @@
     "pathwayTitle": "Rules and Triggers on OCF",
     "icon": "fa-openshift",
     "title": "Rules and Triggers on OCF",
-    "description": "Demostrating the use of Rules and Triggers on OpenShift Cloud Functions",
+    "description": "Demonstrating the use of Rules and Triggers on OpenShift Cloud Functions",
     "difficulty": "beginner",
     "time": "5 minutes",
     "details": {
