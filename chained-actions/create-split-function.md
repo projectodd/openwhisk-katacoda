@@ -19,7 +19,8 @@ Maven Archetype](https://github.com/apache/incubator-openwhisk-devtools/tree/mas
 
 Create a Java function project called `splitter`
 
-```mvn archetype:generate \
+```
+mvn archetype:generate \
     -DarchetypeGroupId=org.apache.openwhisk.java \
     -DarchetypeArtifactId=java-action-archetype \
     -DarchetypeVersion=1.0-SNAPSHOT \
