@@ -11,10 +11,19 @@ cd ~/projects/sorter
 ```{{execute}} 
  
  
-We need to create our python script for function.  Let's open `sorter.py` and update it as shown below:
+We need to create our python script for function.  Let's open ``sorter.py``{{open}} and update it as shown below:
  
 <pre class="file" data-filename="sorter/sorter.py" data-target="replace">
 def main(args):
-    words = args["result"]
-    return sorted(words)
+    return {"result": sorted(args["result"]) }
 </pre>
+
+**2.  Create the Action**
+
+For this action we can simply publish the python script by itself:
+
+``wsk -i action create sequence/sorter sorter.py``{{execute}}
+
+# Next
+
+That's it for this step.  We have one more Action to create before we're truly ready.

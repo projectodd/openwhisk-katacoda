@@ -24,3 +24,9 @@ After invoking this command you should get back a response that looks like this:
     ]
 }
 ```
+
+# You're done!
+
+In this scenario, we created three different Actions and tied them together in one Action.  OpenWhisk takes care of invoking each step 
+and passing the results to each step in our pipeline.  In addition, each Action can be independently updated with out the need to touch 
+every other step in the sequence.
