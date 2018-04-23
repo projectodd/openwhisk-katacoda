@@ -1,5 +1,8 @@
 #! /bin/bash
 
+rm -rf /root/projects
+mkdir -p /root/projects/
+
 ###  OpenWhisk images
 PROJECTODD_VERSION=f5eae82
 OPENWHISK_VERSION=rhdemo-b7724ef

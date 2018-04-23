@@ -1,8 +1,8 @@
 {
-    "pathwayTitle": "Apache OpenWhisk on OpenShift",
+    "pathwayTitle": "Chained Actions on OCF",
     "icon": "fa-openshift",
-    "title": "Chained Actions",
-    "description": "Chaining Actions on OpenWhisk",
+    "title": "Chained Actions on OCF",
+    "description": "Demonstrating the Chaining of Actions on OpenShift Cloud Functions",
     "difficulty": "intermediate",
     "time": "15 minutes",
     "details": {
@@ -10,28 +10,28 @@
             "text": "00-intro.md",
             "courseData": "env-init.sh",
             "credits": "http://developers.redhat.com",
-            "code": "set-env.sh"
+            "code": "/tmp/configure-owsk.sh"
         },
         "steps": [
             {
                 "title": "Step 1",
-                "text": "create-package.md"
+                "text": "01-create-package.md"
             },
             {
                 "title": "Step 2",
-                "text": "create-split-function.md"
+                "text": "02-create-split-function.md"
             },
             {
                 "title": "Step 3",
-                "text": "create-sort-function.md"
+                "text": "03-create-sort-function.md"
             },
             {
-                "title": "Step 3",
-                "text": "create-uppercase-function.md"
+                "title": "Step 4",
+                "text": "04-create-uppercase-function.md"
             },
             {
-                "title": "Step 3",
-                "text": "create-sequence.md"
+                "title": "Step 5",
+                "text": "05-create-sequence.md"
             }
         ],
         "assets": {
