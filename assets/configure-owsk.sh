@@ -21,10 +21,10 @@ cd openwhisk-devtools/java-action-archetype \
     && cd  \
     && rm -rf /tmp/openwhisk-devtools
 
+echo "Waiting for OpenWhisk to finish initializing (`date '+%H:%M:%S'`)"
 while [ -z "`oc logs controller-0 -n faas 2>&1 | grep "invoker status changed"`" ]
 do
-    echo "Waiting for OpenWhisk to finish initializing (`date`)"
-    sleep 10
+    sleep 5
 done
 
 oc patch route openwhisk --namespace faas -p '{"spec":{"tls": {"insecureEdgeTerminationPolicy": "Allow"}}}'
