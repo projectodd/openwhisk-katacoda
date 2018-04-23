@@ -38,7 +38,7 @@
             "host01": [
                 {
                     "file": "configure-owsk.sh",
-                    "target": "/tmp/"
+                    "target": "/root/projects/"
                 }
             ]
         }
