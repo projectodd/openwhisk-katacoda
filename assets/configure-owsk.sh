@@ -1,8 +1,5 @@
 #! /bin/bash
 
-rm -rf /root/projects
-mkdir -p /root/projects/
-
 cd /tmp
 [ -f OpenWhisk_CLI-latest-linux-386.tgz ] || \
     wget -N -nv https://github.com/apache/incubator-openwhisk-cli/releases/download/latest/OpenWhisk_CLI-latest-linux-386.tgz
