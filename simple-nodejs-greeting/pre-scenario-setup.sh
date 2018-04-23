@@ -1,5 +1,7 @@
 #!/bin/bash
 
+t1=$(date '+%s')
+
 rm -rf /root/projects
 export OPENWHISK_HOME="${HOME}/openwhisk"
 mkdir -p $OPENWHISK_HOME/bin
@@ -53,3 +55,6 @@ AUTH_SECRET=$(oc get secret whisk.auth -o yaml | grep "system:" | awk '{print $2
 wsk property set --auth $AUTH_SECRET --apihost $(oc get route/openwhisk --template="{{.spec.host}}")
 wsk -i property get
 wsk -i action list
+
+t2=$(date '+%s')
+echo $((t2 - t1))
