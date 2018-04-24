@@ -1,6 +1,9 @@
-# A Simple Node.js Function using OpenWhisk on OpenShift
+# A Simple Greeter Javascript Function on OpenShift Cloud Functions
 
-In this scenario we will deploy a simple function on the OpenWhisk FaaS platform running on top of OpenShift.
+In this scenario, you will deploy a simple javascript function on the OpenShift Cloud Functions FaaS platform.
+
+**Currently, the setup of OpenWhisk takes up to 3.5 minutes.  This setup was started when you started this scenario.
+It is recommended that you come back in 3.5 minutes to proceed with the first step in this scenario.**
 
 ## Additional Resources
 
