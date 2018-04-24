@@ -14,7 +14,7 @@ export PATH="${OPENWHISK_HOME}/bin:${PATH}"
 
 oc new-project faas --display-name="FaaS- OpenShift Cloud Functions"
 oc adm policy add-role-to-user admin developer -n faas
-oc process -f https://git.io/openwhisk-template | oc create -f -
+oc process -f https://git.io/vpnUR | oc create -f -
 
 PASSED=false
 TIMEOUT=0
@@ -27,6 +27,10 @@ until $PASSED || [ $TIMEOUT -eq 60 ]; do
   let TIMEOUT=TIMEOUT+1
   sleep 3
 done
+
+t2=$(date '+%s')
+echo $((t2 - t1))
+
 PASSED=false
 TIMEOUT=0
 until $PASSED || [ $TIMEOUT -eq 60 ]; do
@@ -39,11 +43,11 @@ until $PASSED || [ $TIMEOUT -eq 60 ]; do
   sleep 2
 done
 
+t3=$(date '+%s')
+echo $((t3 - t1))
+
 oc patch route openwhisk --namespace faas -p '{"spec":{"tls": {"insecureEdgeTerminationPolicy": "Allow"}}}'
 AUTH_SECRET=$(oc get secret whisk.auth -o yaml | grep "system:" | awk '{print $2}' | base64 --decode)
 wsk property set --auth $AUTH_SECRET --apihost $(oc get route/openwhisk --template="{{.spec.host}}")
 wsk -i property get
 wsk -i action list
-
-t2=$(date '+%s')
-echo $((t2 - t1))
