@@ -2,8 +2,8 @@
 
 In this scenario, you will deploy a simple javascript function on the OpenShift Cloud Functions FaaS platform.
 
-**Currently, the setup of OpenWhisk takes up to 2 minutes.  This setup was started when you started this scenario.
-It is recommended that you come back in 2 minutes to proceed with the first step in this scenario.**
+**Currently, the setup of OpenWhisk takes up to 3.5 minutes.  This setup was started when you started this scenario.
+It is recommended that you come back in 3.5 minutes to proceed with the first step in this scenario.**
 
 ## Additional Resources
 
