@@ -14,7 +14,7 @@ export PATH="${OPENWHISK_HOME}/bin:${PATH}"
 
 oc new-project faas --display-name="FaaS- OpenShift Cloud Functions"
 oc adm policy add-role-to-user admin developer -n faas
-oc process -f https://git.io/openwhisk-template | oc create -f -
+oc process -f https://git.io/vpZhu | oc create -f -
 
 PASSED=false
 TIMEOUT=0
