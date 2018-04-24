@@ -25,8 +25,14 @@ until $PASSED || [ $TIMEOUT -eq 60 ]; do
     break
   fi
   let TIMEOUT=TIMEOUT+1
-  sleep 3
+  sleep 5
 done
+
+t2=$(date '+%s')
+echo $((t2 - t1))
+echo $$OC_DEPLOY_STATUS
+
+
 PASSED=false
 TIMEOUT=0
 until $PASSED || [ $TIMEOUT -eq 60 ]; do
@@ -45,5 +51,5 @@ wsk property set --auth $AUTH_SECRET --apihost $(oc get route/openwhisk --templa
 wsk -i property get
 wsk -i action list
 
-t2=$(date '+%s')
-echo $((t2 - t1))
+t3=$(date '+%s')
+echo $((t3 - t1))
