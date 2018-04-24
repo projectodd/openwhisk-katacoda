@@ -25,15 +25,11 @@ until $PASSED || [ $TIMEOUT -eq 60 ]; do
     break
   fi
   let TIMEOUT=TIMEOUT+1
-  sleep 5
+  sleep 3
 done
 
 t2=$(date '+%s')
 echo $((t2 - t1))
-echo $OC_DEPLOY_STATUS
-
-oc get pods
-
 
 PASSED=false
 TIMEOUT=0
@@ -47,11 +43,11 @@ until $PASSED || [ $TIMEOUT -eq 60 ]; do
   sleep 2
 done
 
+t3=$(date '+%s')
+echo $((t3 - t1))
+
 oc patch route openwhisk --namespace faas -p '{"spec":{"tls": {"insecureEdgeTerminationPolicy": "Allow"}}}'
 AUTH_SECRET=$(oc get secret whisk.auth -o yaml | grep "system:" | awk '{print $2}' | base64 --decode)
 wsk property set --auth $AUTH_SECRET --apihost $(oc get route/openwhisk --template="{{.spec.host}}")
 wsk -i property get
 wsk -i action list
-
-t3=$(date '+%s')
-echo $((t3 - t1))
