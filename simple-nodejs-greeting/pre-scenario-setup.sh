@@ -30,7 +30,9 @@ done
 
 t2=$(date '+%s')
 echo $((t2 - t1))
-echo $$OC_DEPLOY_STATUS
+echo $OC_DEPLOY_STATUS
+
+oc get pods
 
 
 PASSED=false
