@@ -33,7 +33,7 @@ echo $((t2 - t1))
 
 PASSED=false
 TIMEOUT=0
-until $PASSED || [ $TIMEOUT -eq 60 ]; do
+until $PASSED || [ $TIMEOUT -eq 90 ]; do
   INVOKER_HEALTH=$(oc logs controller-0 -n faas | grep "invoker status changed" | grep " Healthy" | awk '{print $11}')
   if [ "$INVOKER_HEALTH" == "Healthy" ]; then
     PASSED=true

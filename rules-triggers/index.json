@@ -4,7 +4,7 @@
     "title": "Rules and Triggers on OCF",
     "description": "Demonstrating the use of Rules and Triggers on OpenShift Cloud Functions",
     "difficulty": "beginner",
-    "time": "5 minutes",
+    "time": "8 minutes",
     "details": {
         "intro": {
             "text": "00-intro.md",
