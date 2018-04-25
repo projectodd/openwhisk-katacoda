@@ -4,7 +4,7 @@ In this step, you will open a second terminal window and execute an OpenWhisk co
 
 **1. Open Second Terminal**
 
-To the immediate right of the terminal tab is a plus sign (open-2nd-term.png).  Click on this plus and choose 
+To the immediate right of the terminal tab is a plus sign (./open-2nd-term.png).  Click on this plus and choose 
 Terminal to open a second terminal window.  Once the second terminal opens, enter a command to set the path so
 the wsk command is accessible:
 
