@@ -7,18 +7,19 @@ First, we need to create JavaScript file, click on the link below to create an e
 Once the created file is opened in the editor, you can then copy the content below into the file (or use the `Copy to editor` button):
 
 <pre class="file" data-filename="/root/projects/ocf/greeter.js" data-target="replace">
-function main() {
-    return {payload: 'Welcome to Apache OpenWhisk on OpenShift'};
+function main(parms) {
+    var name = parms.name || 'Guest';
+    return {payload: 'Welcome to OpenShift Cloud Functions, ' + name};
 }
 </pre>
 Take a minute and review the `greeter.js`. At this stage it is pretty simple and has only one method that returns a JSON payload like 
 ```json
-{"payload": "Welcome to Apache OpenWhisk on OpenShift"}
+{"payload": "Welcome to OpenShift Cloud Functions, Guest"}
 ```
 
 **2. Deploy the function**
 
-Lets now create the function say **greeter** to OpenWhisk:
+Lets now deploy the function:
 
 ``cd /root/projects/ocf/``{{execute}}
 
@@ -43,5 +44,21 @@ Having created the function **greeter**, lets now verify the function by invokin
 Executing the above command should return us a JSON payload like:
 
 ```json
-{"payload": "Welcome to Apache OpenWhisk on OpenShift"}
+{"payload": "Welcome to OpenShift Cloud Functions, Guest"}
 ```
+Now invoke the function by copying the line below and pasting it into the terminal window followed by your name.
+
+``wsk -i action invoke greeter --result --parm name ``
+
+You should get the same respone as before but with your name instead of 'Guest'.  Feel free to repeat this command
+several times.  Now, lets see how many times we have invoked this function by dumping the activation log with:
+
+``wsk -i activation list``{{execute}}
+
+Now, let's pick an activation and look at it in detail.  First, copy the line below and paste it into the terminal
+window:
+
+``wsk -i activation get ``
+
+Then, pick one of the activations displayed in your terminal window and copy the activation ID and paste it after the
+command above.  Hit Enter and you will see something like this:
