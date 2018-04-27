@@ -8,7 +8,7 @@
     "details": {
         "assets": {
             "host01": [
-                { "file": "setup-environment.sh", "target": "/root/", "chmod": "+x"}
+                { "file": "../assets/setup-environment.sh", "target": "/root/", "chmod": "+x"}
             ]
           },
         "intro": {
