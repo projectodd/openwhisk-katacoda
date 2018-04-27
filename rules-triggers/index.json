@@ -6,10 +6,16 @@
     "difficulty": "beginner",
     "time": "8 minutes",
     "details": {
+        "assets": {
+            "host01": [
+                { "file": "../assets/setup-environment.sh", "target": "/root/", "chmod": "+x"}
+            ]
+        },
         "intro": {
             "text": "00-intro.md",
             "credits": "http://developers.redhat.com",
-            "code": "pre-scenario-setup.sh"
+            "code": "set-env.sh",
+            "courseData": "run-init.sh"
         },
         "steps": [
             { "title": "Step 1 - Create Timestamp Function", "text": "01-create-function.md" },
