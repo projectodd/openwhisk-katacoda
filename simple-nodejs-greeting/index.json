@@ -30,7 +30,7 @@
     "files": [],
     "environment": {
         "showdashboard": true,
-        "dashboard": "Web Console",
+        "dashboard": [],
         "uilayout": "editor-terminal",
         "uieditorpath": "/root/projects/ocf",
         "uisettings": "java",
