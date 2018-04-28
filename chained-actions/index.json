@@ -6,16 +6,11 @@
     "difficulty": "intermediate",
     "time": "15 minutes",
     "details": {
-        "assets": {
-            "host01": [
-                { "file": "setup-environment.sh", "target": "/root/", "chmod": "+x"}
-            ]
-        },
         "intro": {
             "text": "00-intro.md",
+            "courseData": "env-init.sh",
             "credits": "http://developers.redhat.com",
-            "code": "set-env.sh",
-            "courseData": "run-init.sh"
+            "code": "configure-owsk.sh"
         },
         "steps": [
             {
@@ -38,7 +33,15 @@
                 "title": "Step 5",
                 "text": "05-create-sequence.md"
             }
-        ]
+        ],
+        "assets": {
+            "host01": [
+                {
+                    "file": "configure-owsk.sh",
+                    "target": "/root/"
+                }
+            ]
+        }
     },
     "files": [],
     "environment": {
