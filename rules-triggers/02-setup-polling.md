@@ -25,7 +25,7 @@ Activation: 'invokerHealthTestAction0' (f5bca1d1ef334533bca1d1ef333533de)
 
 **3 Verify Timestamp Activation**
 
-Now click on the first terminal tab and invoke your timestamp function manually so we can verify that it shows up in the 
+Now click on the **first Terminal tab** and invoke your timestamp function manually so we can verify that it shows up in the 
 activation polling in the second window:
 
 ``wsk -i action invoke --blocking timestamp | grep message``{{execute}}
@@ -37,7 +37,7 @@ grepped just the payload message so you should see something like this:
 "message": "Invoked at: 4/19/2018, 5:38:46 PM"
 ```
 
-Click on the second terminal to verify that the activation polling shows the execution of the timestamp function.
+Click on **Terminal 2 tab** to verify that the activation polling shows the execution of the timestamp function.
 You should see something like this:
 
 ```sh
