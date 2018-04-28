@@ -55,7 +55,7 @@ several times.  Now, lets see how many times we have invoked this function by du
 sometimes a delay between the activations and when those activations appear in the log, so we will sleep for a few
 seconds before doing the command:
 
-``sleep 7;wsk -i activation list | grep greeter``{{execute}}
+``sleep 9;wsk -i activation list | grep greeter``{{execute}}
 
 Now, let's pick an activation and look at it in detail.  First, copy the line below and paste it into the terminal
 window:
