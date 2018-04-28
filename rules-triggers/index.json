@@ -10,7 +10,7 @@
             "host01": [
                 { "file": "../assets/setup-environment.sh", "target": "/root/", "chmod": "+x"}
             ]
-        },
+          },
         "intro": {
             "text": "00-intro.md",
             "credits": "http://developers.redhat.com",
