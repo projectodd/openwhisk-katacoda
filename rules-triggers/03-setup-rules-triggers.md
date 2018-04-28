@@ -20,7 +20,7 @@ wsk -i trigger create every-2-seconds \
 
 This rule shows how the `every-5-seconds` trigger can be declaratively mapped to the `timestamp.js` action. 
 Notice that it's named somewhat abstractly so that if we wanted to use a different trigger 
-- perhaps something that fires every minute instead - we could still keep the logical name. To create the rule
+(perhaps something that fires every minute instead) we could still keep the logical name. To create the rule
 enter the folleing command:
 
 ``
