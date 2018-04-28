@@ -1,6 +1,6 @@
 # Setup Rules And Triggers
 
-In this step, you will go back to your first terminal window and setup a trigger and a rule to invoke the timestamp
+In this step, you will go back to your **first Terminal tab** and setup a trigger and a rule to invoke the timestamp
 function periodically. If you have not clicked on the first terminal tab, do so now. 
 
 **1. Setup `every-2-seconds` Trigger.**
@@ -30,7 +30,7 @@ wsk -i rule create \
     timestamp
 ``{{execute}}
 
-At this point, you can click on the second terminal tab to check the activation polling to confirm that the timestamp
+At this point, you can click on the **Terminal 2 tab** to check the activation polling to confirm that the timestamp
 action is invoked by the trigger every 2 seconds.  You should see something like this:
 
 ```sh
@@ -44,8 +44,8 @@ Activation: 'timestamp' (78cc6219bf3544bb8c6219bf3514bbf6)
     "2018-04-19T23:23:01.87488594Z  stdout: Invoked at: 4/19/2018, 11:23:01 PM"
 ]
 ```
-Now click on the first terminal tab and delete the `invoke-periodically` rule by doing:
+Now click on the **first Terminal tab** and delete the `invoke-periodically` rule by doing:
 
 ``wsk -i rule delete invoke-periodically``{{execute}}
 
-When you go back to the second terminal, you will see that the action invocations have stopped.
+When you go back to the **Terminal 2 tab**, you will see that the action invocations have stopped.
