@@ -6,11 +6,16 @@
     "difficulty": "intermediate",
     "time": "15 minutes",
     "details": {
+        "assets": {
+            "host01": [
+                { "file": "setup-environment.sh", "target": "/root/", "chmod": "+x"}
+            ]
+        },
         "intro": {
             "text": "00-intro.md",
-            "courseData": "env-init.sh",
             "credits": "http://developers.redhat.com",
-            "code": "configure-owsk.sh"
+            "code": "set-env.sh",
+            "courseData": "run-init.sh"
         },
         "steps": [
             {
@@ -33,25 +38,12 @@
                 "title": "Step 5",
                 "text": "05-create-sequence.md"
             }
-        ],
-        "assets": {
-            "host01": [
-                {
-                    "file": "configure-owsk.sh",
-                    "target": "/root/"
-                }
-            ]
-        }
+        ]
     },
     "files": [],
     "environment": {
         "showdashboard": true,
-        "dashboards": [
-            {
-                "name": "OpenShift Console",
-                "port": 8443
-            }
-        ],
+        "dashboards": [],
         "uilayout": "editor-terminal",
         "uieditorpath": "/root/projects",
         "uisettings": "java",
