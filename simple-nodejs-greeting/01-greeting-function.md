@@ -51,7 +51,9 @@ Now invoke the function by copying the line below and pasting it into the termin
 ``wsk -i action invoke --result greeter --param name ``
 
 You should get the same respone as before but with your name instead of 'Guest'.  Feel free to repeat this command
-several times.  Now, lets see how many times we have invoked this function by dumping the activation log with:
+several times.  Now, lets see how many times we have invoked this function by dumping the activation log.  There is
+sometimes a delay between the activations and when those activations appear in the log, so if the command below doesn't
+resond the first time, you may have to repeat it.
 
 ``wsk -i activation list | grep greeter``{{execute}}
 

@@ -1,8 +1,8 @@
-echo "Waiting for Apache OpenWhisk environment to be ready. It can take from 2 to 3 minutes."
+echo "Waiting OpenWhisk environment to be ready. It can take from 2 to 3 minutes."
 # wait until the pods are Running
 sleep 30
 while $(oc get pods -n faas controller-0 | grep 0/1 > /dev/null); do sleep 1; done
-echo "Apache OpenWhisk is Running..."
+echo "OpenWhisk is Running..."
 # Run other setup commands
 oc patch route openwhisk --namespace faas -p '{"spec":{"tls": {"insecureEdgeTerminationPolicy": "Allow"}}}'
 AUTH_SECRET=$(oc get secret whisk.auth -o yaml | grep "system:" | awk '{print $2}' | base64 --decode)
