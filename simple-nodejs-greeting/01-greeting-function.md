@@ -53,7 +53,7 @@ Now invoke the function by copying the line below and pasting it into the termin
 You should get the same respone as before but with your name instead of 'Guest'.  Feel free to repeat this command
 several times.  Now, lets see how many times we have invoked this function by dumping the activation log with:
 
-``wsk -i activation list | grep greeter``{{execute}}
+``sleep 2;wsk -i activation list | grep greeter``{{execute}}
 
 Now, let's pick an activation and look at it in detail.  First, copy the line below and paste it into the terminal
 window:
