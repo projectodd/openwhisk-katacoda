@@ -8,9 +8,8 @@
     "details": {
         "intro": {
             "text": "00-intro.md",
-            "courseData": "env-init.sh",
             "credits": "http://developers.redhat.com",
-            "code": "configure-owsk.sh"
+            "code": "setup-environment.sh"
         },
         "steps": [
             {
