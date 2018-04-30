@@ -4,8 +4,8 @@ wget -N -nv https://github.com/apache/incubator-openwhisk-cli/releases/download/
     -O /tmp/OpenWhisk_CLI-latest-linux-386.tgz
 sudo tar xzvf /tmp/OpenWhisk_CLI-latest-linux-386.tgz -C /usr/local/bin wsk
 
-until $(oc status &> /dev/null); do sleep 1; done; oc adm policy add-cluster-role-to-user cluster-admin admin
 oc new-project faas --display-name="FaaS - Apache OpenWhisk"
+until $(oc status &> /dev/null); do sleep 1; done; oc adm policy add-cluster-role-to-user cluster-admin admin
 oc adm policy add-role-to-user admin developer -n faas
 
 oc patch route openwhisk --namespace faas -p '{"spec":{"tls": {"insecureEdgeTerminationPolicy": "Allow"}}}'
