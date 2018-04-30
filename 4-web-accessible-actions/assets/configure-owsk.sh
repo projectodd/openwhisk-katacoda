@@ -1,8 +1,5 @@
 #! /bin/bash
 
-rm -rf /root/projects/
-mkdir -p /root/projects/
-
 wget -N -nv https://github.com/apache/incubator-openwhisk-cli/releases/download/latest/OpenWhisk_CLI-latest-linux-386.tgz \
     -O /tmp/OpenWhisk_CLI-latest-linux-386.tgz
 sudo tar xzvf /tmp/OpenWhisk_CLI-latest-linux-386.tgz -C /usr/local/bin wsk
@@ -23,6 +20,9 @@ cd openwhisk-devtools/java-action-archetype \
     && mvn -DskipTests clean install  \
     && cd  \
     && rm -rf /tmp/openwhisk-devtools
+
+rm -rf /root/projects/
+mkdir -p /root/projects/
 
 echo "Waiting for Apache OpenWhisk environment to be ready. It can take from 2 to 3 minutes."
 while $(oc get pods -n faas controller-0 | grep 0/1 > /dev/null); do sleep 1; done
