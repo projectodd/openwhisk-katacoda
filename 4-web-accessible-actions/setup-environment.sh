@@ -8,12 +8,13 @@ oc new-project faas --display-name="FaaS - Apache OpenWhisk"
 until $(oc status &> /dev/null); do sleep 1; done; oc adm policy add-cluster-role-to-user cluster-admin admin
 oc adm policy add-role-to-user admin developer -n faas
 
+oc process -f https://git.io/vpnUR | oc create -f -
+
 oc patch route openwhisk --namespace faas -p '{"spec":{"tls": {"insecureEdgeTerminationPolicy": "Allow"}}}'
 
 AUTH_SECRET=$(oc get secret whisk.auth -o yaml | grep "system:" | awk '{print $2}' | base64 --decode)
 wsk property set --auth $AUTH_SECRET --apihost $(oc get route/openwhisk --template="{{.spec.host}}")
 
-oc process -f https://git.io/vpnUR | oc create -f -
 
 git clone https://github.com/apache/incubator-openwhisk-devtools openwhisk-devtools
 cd openwhisk-devtools/java-action-archetype \
