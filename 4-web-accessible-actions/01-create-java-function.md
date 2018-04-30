@@ -122,7 +122,7 @@ echo $WEB_URL
 
 Running the above commands will help simplify subsequent invocations of our action.  The echo of `$WEB_URL` above should yield a URL that looks like this:
 
-`https://openwhisk-faas.192.168.64.12.nip.io/api/v1/web/whisk.system/default/echo`
+`https://openwhisk-faas.2886795325-80-kitek02.environments.katacoda.com/api/v1/web/whisk.system/default/echo`
 
 Using this environment variable will remove the clutter of the full URL with each `curl` and let us do things like:
 
@@ -135,18 +135,25 @@ Executing the above command will return a JSON payload something like this:
   "response": {
     "__ow_method": "get",
     "__ow_headers": {
-      "x-forwarded-port": "443",
+      "x-forwarded-port": "80",
       "accept": "*/*",
-      "forwarded": "for=192.168.64.1;host=openwhisk-faas.192.168.64.12.nip.io;proto=https",
-      "user-agent": "curl/7.54.0",
-      "x-forwarded-proto": "https",
+      "forwarded": "for=172.17.0.3;host=openwhisk-faas.2886795325-80-kitek02.environments.katacoda.com;proto=http",
+      "user-agent": "curl/7.29.0",
+      "x-forwarded-proto": "http",
       "host": "controller.faas.svc.cluster.local:8080",
-      "x-forwarded-host": "openwhisk-faas.192.168.64.12.nip.io",
-      "x-forwarded-for": "192.168.64.1"
+      "x-scheme": "https://",
+      "x-katacoda-host": "kitek02",
+      "via": "1.1 google",
+      "x-real-ip": "172.17.0.1",
+      "x-cloud-trace-context": "c2dea7974f8aa974ca035ee128e79a6c/4529087608544220621",
+      "accept-encoding": "gzip",
+      "x-forwarded-host": "openwhisk-faas.2886795325-80-kitek02.environments.katacoda.com",
+      "x-forwarded-for": "172.17.0.3"
     },
     "__ow_path": ""
   }
-}```
+}
+```
 
 As you can see, we get returned to us the headers we send as part of the `GET` request.  It's hard to tell from the above that's really doing what we want so let's add a little information to our request:
 
@@ -159,14 +166,20 @@ In this request, we're simply passing the `key`/`value` pair as part of our URL.
   "response": {
     "__ow_method": "get",
     "__ow_headers": {
-      "x-forwarded-port": "443",
+      "x-forwarded-port": "80",
       "accept": "*/*",
-      "forwarded": "for=192.168.64.1;host=openwhisk-faas.192.168.64.12.nip.io;proto=https",
-      "user-agent": "curl/7.54.0",
-      "x-forwarded-proto": "https",
+      "forwarded": "for=172.17.0.3;host=openwhisk-faas.2886795325-80-kitek02.environments.katacoda.com;proto=http",
+      "user-agent": "curl/7.29.0",
+      "x-forwarded-proto": "http",
       "host": "controller.faas.svc.cluster.local:8080",
-      "x-forwarded-host": "openwhisk-faas.192.168.64.12.nip.io",
-      "x-forwarded-for": "192.168.64.1"
+      "x-scheme": "https://",
+      "x-katacoda-host": "kitek02",
+      "via": "1.1 google",
+      "x-real-ip": "172.17.0.1",
+      "x-cloud-trace-context": "a51436d85f3035d8b3a87e2e6f842922/11418910889981019075",
+      "accept-encoding": "gzip",
+      "x-forwarded-host": "openwhisk-faas.2886795325-80-kitek02.environments.katacoda.com",
+      "x-forwarded-for": "172.17.0.3"
     },
     "__ow_path": "",
     "key": "value"
@@ -185,15 +198,21 @@ This command will return to us the entire JSON document we `POST` here:
     "__ow_method": "post",
     "key1": "value1",
     "__ow_headers": {
-      "x-forwarded-port": "443",
+      "x-forwarded-port": "80",
       "accept": "*/*",
-      "forwarded": "for=192.168.64.1;host=openwhisk-faas.192.168.64.12.nip.io;proto=https",
-      "user-agent": "curl/7.54.0",
-      "x-forwarded-proto": "https",
+      "forwarded": "for=172.17.0.3;host=openwhisk-faas.2886795325-80-kitek02.environments.katacoda.com;proto=http",
+      "user-agent": "curl/7.29.0",
+      "x-forwarded-proto": "http",
       "host": "controller.faas.svc.cluster.local:8080",
+      "x-scheme": "https://",
+      "x-katacoda-host": "kitek02",
       "content-type": "application/json",
-      "x-forwarded-host": "openwhisk-faas.192.168.64.12.nip.io",
-      "x-forwarded-for": "192.168.64.1"
+      "via": "1.1 google",
+      "x-real-ip": "172.17.0.1",
+      "x-cloud-trace-context": "9e96faaeb03273c107e167e3bcbe989a/5519046671984655474",
+      "accept-encoding": "gzip",
+      "x-forwarded-host": "openwhisk-faas.2886795325-80-kitek02.environments.katacoda.com",
+      "x-forwarded-for": "172.17.0.3"
     },
     "key2": "value2",
     "__ow_path": ""
