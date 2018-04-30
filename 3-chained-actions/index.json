@@ -8,9 +8,8 @@
     "details": {
         "intro": {
             "text": "00-intro.md",
-            "courseData": "env-init.sh",
             "credits": "http://developers.redhat.com",
-            "code": "configure-owsk.sh"
+            "code": "setup-environment.sh"
         },
         "steps": [
             {
@@ -33,15 +32,7 @@
                 "title": "Step 5",
                 "text": "05-create-sequence.md"
             }
-        ],
-        "assets": {
-            "host01": [
-                {
-                    "file": "configure-owsk.sh",
-                    "target": "/root/"
-                }
-            ]
-        }
+        ]
     },
     "files": [],
     "environment": {
