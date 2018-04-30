@@ -126,6 +126,8 @@ Running the above commands will help simplify subsequent invocations of our acti
 
 Using this environment variable will remove the clutter of the full URL with each `curl` and let us do things like:
 
+``$WEB_URL.json``{{open}}
+
 ``curl -k $WEB_URL.json``{{execute}}
 
 Executing the above command will return a JSON payload something like this:
