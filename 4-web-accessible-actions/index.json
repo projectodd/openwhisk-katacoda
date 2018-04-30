@@ -19,14 +19,6 @@
     ],
     "finish": {
       "text": "99-outro.md"
-    },
-    "assets": {
-      "host01": [
-        {
-          "file": "configure-owsk.sh",
-          "target": "/root/"
-        }
-      ]
     }
   },
   "files": [],
