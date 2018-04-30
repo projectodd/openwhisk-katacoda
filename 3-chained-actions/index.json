@@ -32,15 +32,7 @@
                 "title": "Step 5",
                 "text": "05-create-sequence.md"
             }
-        ],
-        "assets": {
-            "host01": [
-                {
-                    "file": "configure-owsk.sh",
-                    "target": "/root/"
-                }
-            ]
-        }
+        ]
     },
     "files": [],
     "environment": {
