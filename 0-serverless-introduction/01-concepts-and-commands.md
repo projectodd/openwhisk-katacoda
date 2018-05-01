@@ -16,14 +16,21 @@ response to events such as cron job alarms, file upload, or any of the many even
 
 ## Apache OpenWhisk Concepts and Commands
 
-Apache OpenWhisk offers the developer a straight forward programming model based on 4 concepts: packages, triggers, actions, 
+Apache OpenWhisk offers the developer a straight forward programming model based on 4 concepts: actions, packages, triggers, 
 and rules.
 
-Packages provide event feeds. Triggers associated with those feeds fire when an event occurs, and developers can map 
-actions — or functions — to triggers using rules.  An activation is an instance of an action execution.
+Actions are stateless code snippets that run on the Apache OpenWhisk platform. For example, an action can be used to detect
+the faces in an image, respond to a database change, aggregate a set of API calls, or post a Tweet. An action can be written
+as a JavaScript, Swift, Python or PHP function, a Java method, any binary-compatible executable including Go programs and custom 
+executables packaged as Docker containers.
 
-Anyone can create a new package for others to use, and developers can write their actions in any language. There’s first class
-support for JavaScript, Java, Python, and Swift but any other SDK can be packaged as Docker image.
+Actions can be explicitly invoked, or run in response to an event. In either case, each run of an action results in an activation
+record that is identified by a unique activation ID. The input to an action and the result of an action are a dictionary of
+key-value pairs, where the key is a string and the value a valid JSON value. Actions can also be composed of calls to other
+actions or a defined sequence of actions.
+
+Packages provide event feeds and anyone can create a new package for others to use. Triggers associated with those feeds
+fire when an event occurs, and developers can map actions (or functions) to triggers using rules.  
 
 Some of the more commonly used commands in Apache OpenWhisk are:
 
