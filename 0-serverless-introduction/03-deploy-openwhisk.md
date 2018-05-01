@@ -24,7 +24,7 @@ take several minutes to achieve stable state.  The following command will wait u
 
 Please proceed to next step if and only if the **controller** is ready.  You can check this with:
 
-``oc logs -f controller-0 -n faas | grep "invoker status changed"``{{execute}}
+``while [ -z "`oc logs controller-0 -n faas 2>&1 | grep "invoker status changed"`" ]; do sleep 1; done``{{execute}}
 
 **3. Edit OpenWhisk Ngnix Route TLS**
 
