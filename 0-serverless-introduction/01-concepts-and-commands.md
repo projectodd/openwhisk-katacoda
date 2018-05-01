@@ -28,8 +28,13 @@ support for JavaScript, Java, Python, and Swift but any other SDK can be package
 Some of the more commonly used commands in Apache OpenWhisk are:
 
 ``wsk -i action create`` is used to create an action (or function) so it is deployed to the Serverless platform.
+
 ``wsk -i action update`` is used to update a deployed action.
+
 ``wsk -i action delete`` is used to delete a deployed action.
+
 ``wsk -i action list`` is used to list all the actions that are currently deployed and ready to execute.
+
 ``wsk -i action invoke`` is used to execute an action.
+
 ``wsk -i activation list`` is used to dump out the activation log which shows all the activations of actions.
