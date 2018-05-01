@@ -16,7 +16,7 @@ response to events such as cron job alarms, file upload, or any of the many even
 
 ## Apache OpenWhisk Concepts and Commands
 
-Apache OpenWhisk offers the developer a straight forward programming model based on 4 concepts: packages, triggers, actions, 
+Apache OpenWhisk offers the developer a straight forward programming model based on 4 concepts: packages, triggers, actions, 
 and rules.
 
 Packages provide event feeds. Triggers associated with those feeds fire when an event occurs, and developers can map 
