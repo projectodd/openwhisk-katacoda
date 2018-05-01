@@ -3,7 +3,7 @@
 Having prepared the OpenShift environment to deploy Apache OpenWhisk in the previous step of this scenario, you will now
 do the deployment.
 
-**1.Deploy OpenWhisk**
+**1. Deploy OpenWhisk**
 
 Make sure we are in `faas` project:
 
