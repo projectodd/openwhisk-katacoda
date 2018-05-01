@@ -3,13 +3,13 @@
   "icon": "fa-openshift",
   "title": "Web Accessible Actions on OCF",
   "description": "Demonstrating accessing Actions on OpenShift Cloud Functions via HTTP requests",
-  "difficulty": "intermediate",
-  "time": "15 minutes",
+  "difficulty": "beginner",
+  "time": "10 minutes",
   "details": {
     "intro": {
       "text": "00-intro.md",
       "credits": "http://developers.redhat.com",
-      "code": "configure-owsk.sh"
+      "code": "setup-environment.sh"
     },
     "steps": [
       {
@@ -19,24 +19,13 @@
     ],
     "finish": {
       "text": "99-outro.md"
-    },
-    "assets": {
-      "host01": [
-        {
-          "file": "configure-owsk.sh",
-          "target": "/root/"
-        }
-      ]
     }
   },
   "files": [],
   "environment": {
     "showdashboard": true,
     "dashboards": [
-      {
-        "name": "OpenShift Console",
-        "port": 8443
-      }
+      {"name": "OpenShift Console", "port": 8443}
     ],
     "uilayout": "editor-terminal",
     "uieditorpath": "/root/projects",
