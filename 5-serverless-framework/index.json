@@ -24,7 +24,7 @@
             },
             {
                 "title": "Step 2",
-                "text": "01-serverless-framework-deploy.md"
+                "text": "02-serverless-framework-deploy.md"
             }
         ],
         "finish": {
