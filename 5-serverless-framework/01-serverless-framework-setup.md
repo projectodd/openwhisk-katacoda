@@ -8,8 +8,12 @@ and create the files to deploy a weather function via the Serverless Framework.
 
 **1. Install Serverless Framework**
 
-To install the Serverless Framework we use **npm** to install both the Serverless Framework package and the OpenWhisk plugin.
-Execute the following commands to accomplish this:
+To install the Serverless Framework we use **npm**  which is built on nodejs and we also need to install both the Serverless
+Framework package and the OpenWhisk plugin.  Execute the following commands to accomplish this:
+
+``curl -k --silent --location https://rpm.nodesource.com/setup_8.x | sudo bash - > "/dev/null" 2>&1``{{execute}}
+
+``yum -y install nodejs npm > "/dev/null" 2>&1``{{execute}}
 
 ``npm install -g serverless > "/dev/null" 2>&1``{{execute}}
 
