@@ -20,7 +20,11 @@
         "steps": [
             {
                 "title": "Step 1",
-                "text": "01-serverless-framework.md"
+                "text": "01-serverless-framework-setup.md"
+            },
+            {
+                "title": "Step 2",
+                "text": "01-serverless-framework-deploy.md"
             }
         ],
         "finish": {
