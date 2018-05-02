@@ -11,9 +11,9 @@ and create the files to deploy a weather function via the Serverless Framework.
 To install the Serverless Framework we use **npm** to install both the Serverless Framework package and the OpenWhisk plugin.
 Execute the following commands to accomplish this:
 
-``npm install -g serverless``{{execute}}
+``npm install -g serverless > "/dev/null" 2>&1``{{execute}}
 
-``npm install -g serverless-openwhisk ``{{execute}}
+``npm install -g serverless-openwhisk > "/dev/null" 2>&1 ``{{execute}}
 
 **2. Create a weather JavaScript function**
 
