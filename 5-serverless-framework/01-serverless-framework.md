@@ -3,12 +3,22 @@
 The Serverless Framework is a tool that allows developers to deploy their serverless functions to a choice of different
 Serverless platforms.  It supports AWS Lambda, Azure Function, Google Cloud Functions, Apache OpenWhisk, and several other FaaS
 platforms.  In this step, we will create the files used by Serverless Framework to deploy a weather javascript function to
-OpenShift Cloud Functions and deploy and execute the function.
+OpenShift Cloud Functions and deploy and execute the function.  In this first step, we will install the Serverless Framework
+and create the files to deploy a weather function via the Serverless Framework.
 
-**1. Create a weather JavaScript function**
+**1. Install Serverless Framework**
 
-First, we need to create JavaScript file, click on the link below to create an empty file called **weather.js** in the 
-directory **/root/projects/ocf** : 
+To install the Serverless Framework we use **npm** to install both the Serverless Framework package and the OpenWhisk plugin.
+Execute the following commands to accomplish this:
+
+``npm install -g serverless``{{execute}}
+
+``npm install -g serverless-openwhisk ``{{execute}}
+
+**2. Create a weather JavaScript function**
+
+Now we are ready to create the files.  First, we need to create JavaScript file, click on the link below to create an empty
+file called **weather.js** in the directory **/root/projects/ocf** : 
 ``weather.js``{{open}}
 
 Once the created file is opened in the editor, you can then copy the content below into the file (or use the `Copy to editor` button):
@@ -41,7 +51,7 @@ function main(params) {
 exports.handler = main;
 </pre>
 
-**2. Create the Serverless Framework package.json file**
+**3. Create the Serverless Framework package.json file**
 
 Next, we will create the **package.json** file.  Click on the link below to create the empty file in the directory 
 **/root/projects/ocf**:
@@ -62,7 +72,7 @@ Once the created file is opened in the editor, you can then copy the content bel
 }
 </pre>
 
-**3. Create the Serverless Framework serverless.yml file**
+**4. Create the Serverless Framework serverless.yml file**
 
 Finally, we need to create the **serverless.yml** file.  Click on the link below to create the empty file in the directory 
 **/root/projects/ocf**:
@@ -84,3 +94,5 @@ functions:
 plugins:
     - serverless-openwhisk
 </pre>
+
+Now that we have created the files, we can proceed to deploying the function in the next step of the scenario.
