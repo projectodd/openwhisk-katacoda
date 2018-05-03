@@ -51,10 +51,12 @@ Now invoke the function by **copying the line below and pasting it into the term
 ``wsk -i action invoke --result greeter --param name ``
 
 You should get the same respone as before but with your name instead of 'Guest'.  Feel free to repeat this command
-several times with differen names appended to the end.  Now, lets see how many times we have invoked this function by 
-dumping the activation log.  The activation log in Apache OpenWhisk is designed with a lazy database view update 
-mechanism that prioritizes invocations over activation logging.  This means that you currently often have to invoke
-the ``wsk -i activation list`` command twice with a pause in between.  So, we will do that with the command below:
+several times with different names appended to the end.  
+
+Now, lets see how many times we have invoked this function by dumping the activation log.  The activation log in 
+Apache OpenWhisk is designed with a lazy database view update mechanism that prioritizes invocations over activation
+logging.  This means that you currently often have to invoke the ``wsk -i activation list`` command twice with a
+pause in between.  So, we will do that with the command below:
 
 ``wsk -i activation list > /dev/nul 2>&1; sleep 1; wsk -i activation list | grep greeter``{{execute}}
 
