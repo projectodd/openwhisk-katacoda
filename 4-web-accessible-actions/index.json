@@ -6,10 +6,18 @@
   "difficulty": "beginner",
   "time": "10 minutes",
   "details": {
+    "assets": {
+      "host01": [
+        { "file": "setup-environment.sh", "target": "/root/", "chmod": "+x"}
+      ],
+      "host02": [
+        { "file": "setup-environment.sh", "target": "/root/", "chmod": "+x"}
+      ]
+    },
     "intro": {
       "text": "00-intro.md",
       "credits": "http://developers.redhat.com",
-      "code": "setup-environment.sh"
+      "code": "set-env.sh"
     },
     "steps": [
       {

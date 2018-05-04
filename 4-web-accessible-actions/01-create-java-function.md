@@ -11,7 +11,7 @@ create a simple echo Action that simply returns whatever we send it.
 Create a Java function project called `echo`
 
 ```
-mvn archetype:generate \
+mvn -q archetype:generate \
     -DarchetypeGroupId=org.apache.openwhisk.java \
     -DarchetypeArtifactId=java-action-archetype \
     -DarchetypeVersion=1.0-SNAPSHOT \
@@ -87,7 +87,7 @@ public class FunctionAppTest {
 
 Build the project
 
-``mvn clean package``{{execute}}
+``mvn -q package``{{execute}}
 
 `NOTE`: The Java Action maven archetype is not in maven central yet.  If you plan to use it in your local OpenWhisk environment you then need to build and install from [sources](https://github.com/apache/incubator-openwhisk-devtools/tree/master/java-action-archetype).
 
@@ -116,8 +116,6 @@ Once that is done we can invoke our action and verify we get back the correct re
 ```
 WEB_URL=`wsk -i action get echo --url | awk 'FNR==2{print $1}'`
 AUTH=`oc get secret whisk.auth -o yaml | grep "system:" | awk '{print $2}'`
-
-echo $WEB_URL
 ```{{execute}}
 
 Running the above commands will help simplify subsequent invocations of our action.  The echo of `$WEB_URL` above should yield a URL that looks like this:
