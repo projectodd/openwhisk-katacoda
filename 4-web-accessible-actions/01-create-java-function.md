@@ -8,7 +8,7 @@ create a simple echo Action that simply returns whatever we send it.
 
 ``cd /root/projects``{{execute}}
 
-Create a Java function project called `echo`
+Create a Java function project called `my-echo`
 
 ```
 mvn -q archetype:generate \
@@ -16,22 +16,23 @@ mvn -q archetype:generate \
     -DarchetypeArtifactId=java-action-archetype \
     -DarchetypeVersion=1.0-SNAPSHOT \
     -DgroupId=com.example \
-    -DartifactId=echo
+    -DartifactId=my-echo
 ```{{execute}}
 
 Move to the project directory
 
-``cd echo``{{execute}}
+``cd my-echo``{{execute}}
 
-Let's open the Java source file `src/main/java/com/example/FunctionApp.java` to review its contents.  Click the link below to open the source file in the editor:
+Let's open the Java source file `src/main/java/com/example/FunctionApp.java` to review its contents.  Click the link below
+to open the source file in the editor:
 
-``echo/src/main/java/com/example/FunctionApp.java``{{open}}
+``my-echo/src/main/java/com/example/FunctionApp.java``{{open}}
 
-All Java Action classes should have a `main` method with a signature that takes a `com.google.gson.JsonObject` as parameter and returns a 
-`com.google.gson.JsonObject`.  We need to update the generated function with our desired behavior.  Update the FunctionApp class with 
-this code:
+All Java Action classes should have a `main` method with a signature that takes a `com.google.gson.JsonObject` as parameter
+and returns a `com.google.gson.JsonObject`.  We need to update the generated function with our desired behavior.  Update the
+FunctionApp class with this code:
 
-<pre class="file" data-filename="echo/src/main/java/com/example/FunctionApp.java" data-target="replace">
+<pre class="file" data-filename="my-echo/src/main/java/com/example/FunctionApp.java" data-target="replace">
 package com.example;
 
 import com.google.gson.JsonArray;
@@ -51,11 +52,11 @@ public class FunctionApp {
 
 With the main function updated, now we need to update the tests.
 
-``echo/src/test/java/com/example/FunctionAppTest.java``{{open}}
+``my-echo/src/test/java/com/example/FunctionAppTest.java``{{open}}
 
 Update the FunctionAppTest class with this code:
 
-<pre class="file" data-filename="echo/src/test/java/com/example/FunctionAppTest.java" data-target="replace">
+<pre class="file" data-filename="my-echo/src/test/java/com/example/FunctionAppTest.java" data-target="replace">
 package com.example;
 
 import static org.junit.Assert.assertEquals;
@@ -89,38 +90,42 @@ Build the project
 
 ``mvn -q package``{{execute}}
 
-`NOTE`: The Java Action maven archetype is not in maven central yet.  If you plan to use it in your local OpenWhisk environment you then need to build and install from [sources](https://github.com/apache/incubator-openwhisk-devtools/tree/master/java-action-archetype).
+`NOTE`: The Java Action maven archetype is not in maven central yet.  If you plan to use it in your local OpenWhisk
+environment you then need to build and install from 
+[sources](https://github.com/apache/incubator-openwhisk-devtools/tree/master/java-action-archetype).
 
 **2. Deploy the function**
 
-Let's now create a function called `echo` in OpenWhisk:
+Let's now create a function called `my-echo` in OpenWhisk:
 
-``wsk -i action create --web=true echo target/echo.jar --main com.example.FunctionApp``{{execute}}
+``wsk -i action create --web=true my-echo target/my-echo.jar --main com.example.FunctionApp``{{execute}}
 
-When we create Java function the parameter `--main` is mandatory.  It defines which Java class will be called during OpenWhisk Action invocation.  The `--web=true` parameter indicates that this action will
+When we create Java function the parameter `--main` is mandatory.  It defines which Java class will be called during OpenWhisk
+Action invocation.  The `--web=true` parameter indicates that this action will
 
 **4. Verify the function**
 
 Let's check if the function is created correctly:
 
-``wsk -i action list | grep 'echo'``{{execute}}
+``wsk -i action list | grep 'my-echo'``{{execute}}
 
 The output of the command should show something like:
 
 ```sh
-/whisk.system/echo                             private java
+/whisk.system/my-echo                             private java
 ```
 
 Once that is done we can invoke our action and verify we get back the correct response:
 
 ```
-WEB_URL=`wsk -i action get echo --url | awk 'FNR==2{print $1}'`
+WEB_URL=`wsk -i action get my-echo --url | awk 'FNR==2{print $1}'`
 AUTH=`oc get secret whisk.auth -o yaml | grep "system:" | awk '{print $2}'`
 ```{{execute}}
 
-Running the above commands will help simplify subsequent invocations of our action.  The echo of `$WEB_URL` above should yield a URL that looks like this:
+Running the above commands will help simplify subsequent invocations of our action.  Doing ``echo $WEB_URL`{{execute}}` should 
+yield a URL that looks like this:
 
-`https://openwhisk-faas.2886795325-80-kitek02.environments.katacoda.com/api/v1/web/whisk.system/default/echo`
+`https://openwhisk-faas.2886795325-80-kitek02.environments.katacoda.com/api/v1/web/whisk.system/default/my-echo`
 
 Using this environment variable will remove the clutter of the full URL with each `curl` and let us do things like:
 
