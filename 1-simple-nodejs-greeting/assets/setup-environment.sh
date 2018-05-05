@@ -1,5 +1,6 @@
 echo "Waiting for Apache OpenWhisk environment to be ready. It can take from 2 to 3 minutes."
 # wait until the pods are Running
+sleep 30
 while $(oc get pods -n faas controller-0 | grep 0/1 > /dev/null); do sleep 1; done
 echo "Apache OpenWhisk is Running..."
 # Run other setup commands
