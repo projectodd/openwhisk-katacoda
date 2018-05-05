@@ -122,7 +122,7 @@ WEB_URL=`wsk -i action get my-echo --url | awk 'FNR==2{print $1}'`
 AUTH=`oc get secret whisk.auth -o yaml | grep "system:" | awk '{print $2}'`
 ```{{execute}}
 
-Running the above commands will help simplify subsequent invocations of our action.  Doing ``echo $WEB_URL`{{execute}}` should 
+Running the above commands will help simplify subsequent invocations of our action.  Doing ``echo $WEB_URL``{{execute}} should 
 yield a URL that looks like this:
 
 `https://openwhisk-faas.2886795325-80-kitek02.environments.katacoda.com/api/v1/web/whisk.system/default/my-echo`

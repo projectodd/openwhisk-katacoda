@@ -9,9 +9,6 @@
     "assets": {
       "host01": [
         {"file": "setup-environment.sh", "target": "/root/", "chmod": "+x"}
-      ],
-      "host02": [
-        {"file": "setup-environment.sh", "target": "/root/", "chmod": "+x"}
       ]
     },
     "intro": {
@@ -40,7 +37,10 @@
         "title": "Step 5",
         "text": "05-create-sequence.md"
       }
-    ]
+    ],
+    "finish": {
+        "text": "99-outro.md"
+    }
   },
   "files": [],
   "environment": {
