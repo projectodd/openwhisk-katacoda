@@ -9,9 +9,6 @@
     "assets": {
       "host01": [
         {"file": "setup-environment.sh", "target": "/root/", "chmod": "+x"}
-      ],
-      "host02": [
-        {"file": "setup-environment.sh", "target": "/root/", "chmod": "+x"}
       ]
     },
     "intro": {
