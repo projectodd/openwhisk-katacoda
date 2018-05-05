@@ -37,7 +37,10 @@
         "title": "Step 5",
         "text": "05-create-sequence.md"
       }
-    ]
+    ],
+    "finish": {
+        "text": "99-outro.md"
+    }
   },
   "files": [],
   "environment": {
