@@ -6,4 +6,3 @@ ssh root@host01 "wget -c https://github.com/projectodd/openwhisk-openshift/relea
 ssh root@host01 "tar -zxvf /root/installation/OpenWhisk_CLI-latest-linux-386.tgz -C /root/openwhisk/bin/"
 ssh root@host01 "oc new-project faas --display-name='FaaS - OpenShift Cloud Functions'"
 ssh root@host01 "oc adm policy add-role-to-user admin developer -n faas"
-ssh root@host01 "oc process -f https://git.io/vpnUR | oc create -f -"
