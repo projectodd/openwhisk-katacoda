@@ -101,7 +101,7 @@ Let's now create a Action called `my-echo` in OpenWhisk:
 ``wsk -i action create --web=true my-echo target/my-echo.jar --main com.example.FunctionApp``{{execute}}
 
 When we create Java Action the parameter `--main` is mandatory.  It defines which Java class will be called during OpenWhisk
-Action invocation.  The `--web=true` parameter indicates that this action will
+Action invocation.  The `--web=true` parameter indicates that this action should be exposed via an HTTP endpoint.
 
 **4. Verify the Action**
 
