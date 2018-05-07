@@ -27,3 +27,6 @@ oc patch route openwhisk --namespace faas -p '{"spec":{"tls": {"insecureEdgeTerm
 
 AUTH_SECRET=$(oc get secret whisk.auth -o yaml | grep "system:" | awk '{print $2}' | base64 --decode) 1> /dev/null
 wsk property set --auth $AUTH_SECRET --apihost $(oc get route/openwhisk --template="{{.spec.host}}") 1> /dev/null
+
+clear
+echo Apache OpenWhisk is ready!
