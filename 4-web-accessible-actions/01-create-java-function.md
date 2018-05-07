@@ -1,6 +1,6 @@
-# Create the Java Function
+# Create the Java Action
 
-**1. Create the Java function**
+**1. Create the Java Action**
 
 First we need to create our Java Action using the [Java Action 
 Maven Archetype](https://github.com/apache/incubator-openwhisk-devtools/tree/master/java-action-archetype).  In this scenario, we will 
@@ -8,7 +8,7 @@ create a simple echo Action that simply returns whatever we send it.
 
 ``cd /root/projects``{{execute}}
 
-Create a Java function project called `my-echo`
+Create a Java Action project called `my-echo`
 
 ```
 mvn -q archetype:generate \
@@ -29,7 +29,7 @@ to open the source file in the editor:
 ``my-echo/src/main/java/com/example/FunctionApp.java``{{open}}
 
 All Java Action classes should have a `main` method with a signature that takes a `com.google.gson.JsonObject` as parameter
-and returns a `com.google.gson.JsonObject`.  We need to update the generated function with our desired behavior.  Update the
+and returns a `com.google.gson.JsonObject`.  We need to update the generated Action with our desired behavior.  Update the
 FunctionApp class with this code:
 
 <pre class="file" data-filename="my-echo/src/main/java/com/example/FunctionApp.java" data-target="replace">
@@ -50,7 +50,7 @@ public class FunctionApp {
 }
 </pre>
 
-With the main function updated, now we need to update the tests.
+With the main Action updated, now we need to update the tests.
 
 ``my-echo/src/test/java/com/example/FunctionAppTest.java``{{open}}
 
@@ -94,18 +94,18 @@ Build the project
 environment you then need to build and install from 
 [sources](https://github.com/apache/incubator-openwhisk-devtools/tree/master/java-action-archetype).
 
-**2. Deploy the function**
+**2. Deploy the Action**
 
-Let's now create a function called `my-echo` in OpenWhisk:
+Let's now create a Action called `my-echo` in OpenWhisk:
 
 ``wsk -i action create --web=true my-echo target/my-echo.jar --main com.example.FunctionApp``{{execute}}
 
-When we create Java function the parameter `--main` is mandatory.  It defines which Java class will be called during OpenWhisk
+When we create Java Action the parameter `--main` is mandatory.  It defines which Java class will be called during OpenWhisk
 Action invocation.  The `--web=true` parameter indicates that this action will
 
-**4. Verify the function**
+**4. Verify the Action**
 
-Let's check if the function is created correctly:
+Let's check if the Action is created correctly:
 
 ``wsk -i action list | grep 'my-echo'``{{execute}}
 
