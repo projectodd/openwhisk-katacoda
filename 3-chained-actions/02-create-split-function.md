@@ -13,7 +13,7 @@ Maven Archetype](https://github.com/apache/incubator-openwhisk-devtools/tree/mas
 Create a Java function project called `splitter`
 
 ```
-mvn archetype:generate \
+mvn -q archetype:generate \
     -DarchetypeGroupId=org.apache.openwhisk.java \
     -DarchetypeArtifactId=java-action-archetype \
     -DarchetypeVersion=1.0-SNAPSHOT \
@@ -109,7 +109,7 @@ public class FunctionAppTest {
 
 Build the project
 
-``mvn clean package``{{execute}}
+``mvn -q package``{{execute}}
 
 `NOTE`: The Java Action maven archetype is not in maven central yet.  If you plan to use it in your local OpenWhisk environment you then need to build and install from [sources](https://github.com/apache/incubator-openwhisk-devtools/tree/master/java-action-archetype).
 
@@ -135,7 +135,7 @@ The output of the command should show something like:
 
 Now we can invoke the action and see that it's working:
 
-``wsk -i action invoke sequence/splitter --result --param text "zebra,cat,antelope"``{{execute}}
+``wsk -i action invoke sequence/splitter --result --param text "zebra,cat,antelope" | tee ~/split.json``{{execute}}
 
 Executing the above command should return us this JSON payload:
 
@@ -148,6 +148,8 @@ Executing the above command should return us this JSON payload:
     ]
 }
 ```
+
+Note that we have piped the results through the `tee` command so we can store the results to help us verify the next step in our chain.
 
 # Next
 

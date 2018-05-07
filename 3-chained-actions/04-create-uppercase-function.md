@@ -25,6 +25,26 @@ For this action we can simply publish the python script by itself:
 
 ``wsk -i action create sequence/uppercase uppercase.js``{{execute}}
 
+**3.  Test the Action**
+
+One again, we can test this action using the output of the last action:
+
+``wsk -i action invoke sequence/uppercase --param-file ~/sorted.json --result``{{execute}}
+
+This will give us our expected output:
+
+```json
+{
+    "result": [
+        "ANTELOPE",
+        "CAT",
+        "ZEBRA"
+    ]
+}
+```
+
+Here we can see that our output is as expected and we're ready for the next step.
+
 # Next
 
 That's the last Action we need to create.  Next, we'll create the sequence that ties them all together.

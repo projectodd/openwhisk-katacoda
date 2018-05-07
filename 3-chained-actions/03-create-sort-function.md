@@ -24,6 +24,26 @@ For this action we can simply publish the python script by itself:
 
 ``wsk -i action create sequence/sorter sorter.py``{{execute}}
 
+**3.  Test the Action**
+
+Using the JSON file we created in the last step, we test our new action in isolation to be sure it's doing what we expect:
+
+``wsk -i action invoke sequence/sorter --param-file  ~/split.json --result | tee ~/sorted.json``{{execute}}
+
+This will give us our expected output:
+
+```json
+{
+    "result": [
+        "antelope",
+        "cat",
+        "zebra"
+    ]
+}
+```
+
+Note that here, too, we have saved the output so we can test our next step.
+
 # Next
 
 That's it for this step.  We have one more Action to create before we're truly ready.
