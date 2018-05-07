@@ -6,7 +6,8 @@ The second step in our sequence will accept a JSON document containing the list 
  
 For this function, we're going to use a different language.  This step will use python to accept the JSON document and sort the list of words our previous function emitted.  Let's return to our main directory and create a new project for the second function of our sequence.
  
-```mkdir ~/projects/sorter
+```
+mkdir ~/projects/sorter
 cd ~/projects/sorter
 ```{{execute}} 
  
