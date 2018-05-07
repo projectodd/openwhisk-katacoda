@@ -1,6 +1,6 @@
 # Create the Sequence
 
-The final step is to group our functions into to a sequence.  This allows us to invoke the first function and let OpenWhisk handle invoking each subsequent Action in turn.
+The final step is to group our Actions into to a sequence.  This allows us to invoke the first Action and let OpenWhisk handle invoking each subsequent Action in turn.
 
 
 **1.  Create the sequence**
