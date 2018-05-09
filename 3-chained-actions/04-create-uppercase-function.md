@@ -1,6 +1,7 @@
 # Create the Uppercase Action
 
-This next Action will take each element in the list of words and convert them to uppercase.  When that's done it will emit a JSON document containing the modified list.
+This next Action will take each element in the list of words and convert them to uppercase.  When that's done it will emit
+a JSON document containing the modified list.
 
 **1.  Create the Javascript Action**
 
@@ -11,7 +12,8 @@ mkdir -p ~/projects/uppercase
 cd ~/projects/uppercase
 ```{{execute}}
 
-Now let's open ``uppercase/uppercase.js``{{open}} and create our uppercase Action:
+Now, **click on the link** to open ``uppercase/uppercase.js``{{open}} and **click on the Copy to Editor** button to create our
+uppercase Action:
 
 <pre class="file" data-filename="uppercase/uppercase.js" data-target="replace">
 function main(args) {

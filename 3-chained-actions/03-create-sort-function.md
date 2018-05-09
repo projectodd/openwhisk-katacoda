@@ -1,18 +1,21 @@
 # Create the Sort Action
 
-The second step in our sequence will accept a JSON document containing the list of words to sort and emit the sorted list as another JSON document to be passed to the next step in our sequence.
+The second step in our sequence will accept a JSON document containing the list of words to sort and emit the sorted list as 
+another JSON document to be passed to the next step in our sequence.
  
  **1. Create the sort Action**
  
-For this Action, we're going to use a different language.  This step will use python to accept the JSON document and sort the list of words our previous Action emitted.  Let's return to our main directory and create a new project for the second Action of our sequence.
+For this Action, we're going to use a different language.  This step will use python to accept the JSON document and sort the list
+of words our previous Action emitted.  Let's return to our main directory and create a new project for the second Action of our
+sequence.
  
 ```
 mkdir ~/projects/sorter
 cd ~/projects/sorter
 ```{{execute}} 
  
- 
-We need to create our python script for Action.  Let's open ``sorter/sorter.py``{{open}} and update it as shown below:
+We need to create our python script for Action.  **Click on the link** to open ``sorter/sorter.py``{{open}} and click on the
+**Copy to Editor** button to update it as shown below:
  
 <pre class="file" data-filename="sorter/sorter.py" data-target="replace">
 def main(args):
