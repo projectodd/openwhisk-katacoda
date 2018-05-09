@@ -25,14 +25,14 @@ Move to the project directory
 
 ``cd splitter``{{execute}}
 
-Let's open the Java source file `src/main/java/com/example/FunctionApp.java` to review its contents.  **Click the link below**
-to open the source file in the editor:
+Let's open the Java source file `src/main/java/com/example/FunctionApp.java` to review its contents.  **Click 
+the link below** to open the source file in the editor:
 
 ``splitter/src/main/java/com/example/FunctionApp.java``{{open}}
 
 All OpenWhisk Java Action classes should have a `main` method with a signature that takes a `com.google.gson.JsonObject` as a
 parameter and returns a `com.google.gson.JsonObject`.  We need to update the generated Action with our desired behavior.  Update
-the FunctionApp class with this code by **clicking on the Copy button below**:
+the FunctionApp class with this code by clicking on the **Copy to Editor** button below:
 
 <pre class="file" data-filename="splitter/src/main/java/com/example/FunctionApp.java" data-target="replace">
 package com.example;
@@ -68,7 +68,7 @@ With the main Action updated, now we need to update the tests. **Click on the li
 
 ``splitter/src/test/java/com/example/FunctionAppTest.java``{{open}}
 
-Update the FunctionAppTest class by **clicking on the Copy button** below:
+Update the FunctionAppTest class by clicking on the **Copy to Editor** button below:
 
 <pre class="file" data-filename="splitter/src/test/java/com/example/FunctionAppTest.java" data-target="replace">
 package com.example;
