@@ -14,7 +14,8 @@ mkdir ~/projects/sorter
 cd ~/projects/sorter
 ```{{execute}} 
  
-We need to create our python script for Action.  Let's open ``sorter/sorter.py``{{open}} and update it as shown below:
+We need to create our python script for Action.  **Click on the link** to open ``sorter/sorter.py``{{open}} and click on the
+**Copy to Editor** button to update it as shown below:
  
 <pre class="file" data-filename="sorter/sorter.py" data-target="replace">
 def main(args):
