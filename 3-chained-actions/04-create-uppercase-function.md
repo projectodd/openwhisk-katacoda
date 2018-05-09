@@ -12,7 +12,8 @@ mkdir -p ~/projects/uppercase
 cd ~/projects/uppercase
 ```{{execute}}
 
-Now, **click on the link** to open ``uppercase/uppercase.js``{{open}} and **click on the copy** button tocreate our uppercase Action:
+Now, **click on the link** to open ``uppercase/uppercase.js``{{open}} and **click on the Copy to Editor** button to create our
+uppercase Action:
 
 <pre class="file" data-filename="uppercase/uppercase.js" data-target="replace">
 function main(args) {
