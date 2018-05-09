@@ -25,12 +25,14 @@ Move to the project directory
 
 ``cd splitter``{{execute}}
 
-Let's open the Java source file `src/main/java/com/example/FunctionApp.java` to review its contents.  Click the link below to open the source file in the editor:
+Let's open the Java source file `src/main/java/com/example/FunctionApp.java` to review its contents.  **Click the link below**
+to open the source file in the editor:
 
 ``splitter/src/main/java/com/example/FunctionApp.java``{{open}}
 
-All OpenWhisk Java Action classes should have a `main` method with a signature that takes a `com.google.gson.JsonObject` as parameter and returns a `com.google.gson.JsonObject`.
-We need to update the generated Action with our desired behavior.  Update the FunctionApp class with this code:
+All OpenWhisk Java Action classes should have a `main` method with a signature that takes a `com.google.gson.JsonObject` as a
+parameter and returns a `com.google.gson.JsonObject`.  We need to update the generated Action with our desired behavior.  Update
+the FunctionApp class with this code by **clicking on the Copy button below**:
 
 <pre class="file" data-filename="splitter/src/main/java/com/example/FunctionApp.java" data-target="replace">
 package com.example;
@@ -62,11 +64,11 @@ public class FunctionApp {
 }
 </pre>
 
-With the main Action updated, now we need to update the tests.
+With the main Action updated, now we need to update the tests. **Click on the link below** to open the file in the editor:
 
 ``splitter/src/test/java/com/example/FunctionAppTest.java``{{open}}
 
-Update the FunctionAppTest class with this code:
+Update the FunctionAppTest class by **clicking on the Copy button** below:
 
 <pre class="file" data-filename="splitter/src/test/java/com/example/FunctionAppTest.java" data-target="replace">
 package com.example;
@@ -111,7 +113,8 @@ Build the project
 
 ``mvn -q package``{{execute}}
 
-`NOTE`: The Java Action maven archetype is not in maven central yet.  If you plan to use it in your local OpenWhisk environment you then need to build and install from [sources](https://github.com/apache/incubator-openwhisk-devtools/tree/master/java-action-archetype).
+`NOTE`: The Java Action maven archetype is not in maven central yet.  If you plan to use it in your local OpenWhisk environment
+you will need to build and install from [sources](https://github.com/apache/incubator-openwhisk-devtools/tree/master/java-action-archetype).
 
 **2. Deploy the Action**
 
@@ -119,7 +122,8 @@ Let's now create a Action called `splitter` in OpenWhisk:
 
 ``wsk -i action create sequence/splitter target/splitter.jar --main com.example.FunctionApp``{{execute}}
 
-When we create Java Action the parameter `--main` is mandatory.  It defines which Java class will be called during OpenWhisk Action invocation.
+When we create Java Action the parameter `--main` is mandatory.  It defines which Java class will be called during OpenWhisk
+Action invocation.
 
 **4. Verify the Action**
 
