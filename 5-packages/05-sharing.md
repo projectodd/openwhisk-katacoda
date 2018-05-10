@@ -48,7 +48,7 @@ packages
 
 Note that the `kelvin` package is still private.  The package bindings must be published separately.
 
-Should you change your mind and need to unpublish a package, simpley pass `no` where we passed `yes` above:
+Should you change your mind and need to unpublish a package, simply pass `no` where we passed `yes` above:
 
 ``wsk -i package update conversions --shared no``{{execute}}
 

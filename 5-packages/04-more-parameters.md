@@ -2,7 +2,7 @@
 
 ### Parameter files
 
-Using default paramater values is one way to reduce the clutter of invoking Actions with parameters.  However it's only truly useful if there are commonly used default values that can be omitted.  More common is the case where there are several parameters to pass that don't boil down to commonly used default values.  In still other cases, the parameter values might be complex json documents, e.g., that are awkward to pass on the command line.
+Using default parameter values is one way to reduce the clutter of invoking Actions with parameters.  However it's only truly useful if there are commonly used default values that can be omitted.  More common is the case where there are several parameters to pass that don't boil down to commonly used default values.  In still other cases, the parameter values might be complex json documents, e.g., that are awkward to pass on the command line.
 
 In these cases, we can use files to hold out parameters and pass that file to our invocation.  Lets start by create a simple JSON file to hold these values.
 
@@ -83,7 +83,7 @@ Content at this would be painful to pass on the command line.  Some data might e
 
 In many applications it might be impossible to identify a set of default values for parameters that apply broadly across all uses of an API.  However, it might be possible to identify multiple common uses within which certain patterns can be used to determine a workable set of default parameters.  In these case, we can create a package binding to define default values specific to that particular use case or work flow.
 
-For example, in our temperature converion package we've been assuming that, absent an input scale, the temperature had been measured in Fahrenheit.  But suppose a group came along that works almost exclusively in Kelvin.  That default now starts to get in the way.  One solution is to create a binding for that package with Kelvin as the default input scale:
+For example, in our temperature conversion package we've been assuming that, absent an input scale, the temperature had been measured in Fahrenheit.  But suppose a group came along that works almost exclusively in Kelvin.  That default now starts to get in the way.  One solution is to create a binding for that package with Kelvin as the default input scale:
 
 ``wsk package bind /whisk.system/conversions kelvin --param scale K``{{execute}}
 

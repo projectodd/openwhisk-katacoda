@@ -41,7 +41,7 @@ package /whisk.system/alarms: Alarms and periodic utility
    (parameters: cron, startDate, stopDate)
 ```
 
-Here we can see that the `alarms` package contains three feeds.  Additionally, we can see these feeds all take various paramater values.  We will look in to how to make use of this kind of information as we proceed.
+Here we can see that the `alarms` package contains three feeds.  Additionally, we can see these feeds all take various parameter values. We will look in to how to make use of this kind of information as we proceed.
 
 **2. Creating a package**
 

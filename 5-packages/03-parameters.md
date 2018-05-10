@@ -5,7 +5,7 @@
 
 If a function takes a lot of parameters, invoking it can get verbose quite quickly.  Fortunately, if those parameter values are often the same, we can define defaults for those parameters and skip passing them at invocation time.
 
-In our case, we will most often want our results in Celsius so let's define a default paramater for the `target`.
+In our case, we will most often want our results in Celsius so let's define a default parameter for the `target`.
 
 ``wsk -i action update conversions/temperature --param target C``{{execute}}
 
@@ -25,7 +25,7 @@ This gives us our expected response:
 }
 ```
 
-We can it a step further, of course.  If Celsius is our default target temperature scale, it stands to reason that our default initial scale is Farhenheit.  So let's add a default for that one, too.
+We can it a step further, of course.  If Celsius is our default target temperature scale, it stands to reason that our default initial scale is Fahrenheit.  So let's add a default for that one, too.
 
 `NOTE`:  Parameter definitions are not cumulative.  Adding any new default values will overwrite existing definitions.  If you define new default parameter values, you'll have to include any previous definitions.
 
@@ -49,7 +49,7 @@ This will assumed the default `scale` of Celsius for the input and give us this 
 
 ### Package Parameters
 
-Default paramater values can also be defined on packages.  These values are passed on all Actions defined in the package.  To see this in action, let's reset our temperature conversion Action.  First, we'll deleted and recreate our Action:
+Default parameter values can also be defined on packages.  These values are passed on all Actions defined in the package.  To see this in action, let's reset our temperature conversion Action.  First, we'll deleted and recreate our Action:
 
 ```
 wsk -i action delete conversions/temperature
