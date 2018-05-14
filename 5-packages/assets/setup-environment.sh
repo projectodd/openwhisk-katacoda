@@ -1,7 +1,5 @@
 #!/bin/bash
 
-echo "Waiting for Apache OpenWhisk environment to be ready."
-
 export PATH=/root/:${PATH}
 rm -rf /root/projects/*
 mkdir -p /root/projects
