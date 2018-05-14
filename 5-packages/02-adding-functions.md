@@ -49,7 +49,10 @@ function main(args) {
 
 Here we have a "simple" temperature converter.  This example has been slightly complicated to make room for later demonstrations.  At any rate, with our function created we need to tell OpenWhisk about it:
 
-``wsk -i action update conversions/temperature temperature.js``{{execute}}
+```
+cd ~/projects
+wsk -i action update conversions/temperature temperature.js
+```{{execute}}
 
 After running this you should this response:
 

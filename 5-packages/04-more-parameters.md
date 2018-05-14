@@ -77,7 +77,8 @@ Of course, the parameter file is JSON so your input document could be quite comp
 }
 ```
 
-Content at this would be painful to pass on the command line.  Some data might even exceed the operating system's allowable command line length.  A parameter file sidesteps both of these issues.
+Content at this scale would be painful to pass on the command line.  Some data might even exceed the operating system's allowable command 
+line length.  A parameter file sidesteps both of these issues.
 
 ### Package Bindings
 
@@ -85,7 +86,7 @@ In many applications it might be impossible to identify a set of default values 
 
 For example, in our temperature conversion package we've been assuming that, absent an input scale, the temperature had been measured in Fahrenheit.  But suppose a group came along that works almost exclusively in Kelvin.  That default now starts to get in the way.  One solution is to create a binding for that package with Kelvin as the default input scale:
 
-``wsk package bind /whisk.system/conversions kelvin --param scale K``{{execute}}
+``wsk -i package bind /whisk.system/conversions kelvin --param scale K``{{execute}}
 
 This creates a meta-package, of sorts, that binds the parameter names and values before invoking the underlying Actions.  We can see our new package in OpenWhisk:
 

@@ -49,7 +49,7 @@ This will assumed the default `scale` of Celsius for the input and give us this 
 
 ### Package Parameters
 
-Default parameter values can also be defined on packages.  These values are passed on all Actions defined in the package.  To see this in action, let's reset our temperature conversion Action.  First, we'll deleted and recreate our Action:
+Default parameter values can also be defined on packages.  These values are passed on all Actions defined in the package.  To see this in action, let's reset our temperature conversion Action.  First, we'll delete and recreate our Action:
 
 ```
 wsk -i action delete conversions/temperature
@@ -68,7 +68,8 @@ This will give you a nonsense response:
 }
 ```
 
-As you can see, without those other two parameters, the output becomes unintelligible.  Now we can those defaults to the package.  It looks essentially the same except we're going to update the package and not the Action itself:
+As you can see, without those other two parameters the output becomes unintelligible.  Now we can add those defaults to the package.  It 
+looks essentially the same except we're going to update the package and not the Action itself:
 
 ``wsk -i package update conversions --param target C --param scale F``{{execute}}
 
