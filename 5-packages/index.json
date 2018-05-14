@@ -52,7 +52,7 @@
     "uimessage1": "\u001b[32mOpenShift Console.\u001b[m\r\n"
   },
   "backend": {
-    "imageid": "openshift-3-7-serverless",
+    "imageid": "openshift-middleware-3-7",
     "port": 8443
   }
 }
