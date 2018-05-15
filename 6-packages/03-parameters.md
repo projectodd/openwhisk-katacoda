@@ -25,7 +25,8 @@ This gives us our expected response:
 }
 ```
 
-We can it a step further, of course.  If Celsius is our default target temperature scale, it stands to reason that our default initial scale is Fahrenheit.  So let's add a default for that one, too.
+We can take it a step further, of course.  If Celsius is our default target temperature scale, it stands to reason that our default initial 
+scale is Fahrenheit.  So let's add a default for that one, too.
 
 `NOTE`:  Parameter definitions are not cumulative.  Adding any new default values will overwrite existing definitions.  If you define new default parameter values, you'll have to include any previous definitions.
 
