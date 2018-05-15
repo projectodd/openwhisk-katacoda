@@ -5,7 +5,7 @@
 ### we can remove all this pre-pull stuff.
 PROJECTODD_VERSION=f5eae82
 OPENWHISK_VERSION=rhdemo-b7724ef
-STRIMZI_VERSION=0.2.0
+STRIMZI_VERSION=0.3.1
 
 docker pull busybox
 docker pull centos/nginx-112-centos7@sha256:42330f7f29ba1ad67819f4ff3ae2472f62de13a827a74736a5098728462212e7
